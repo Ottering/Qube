@@ -23,16 +23,12 @@ module Qube
 
 	# Load a serialized (.rbo) object
 	def self.load( file )
-		return Marshal.restore( open( file, 'rb'){ |io|
-			io.read
-		})
+		return Marshal.restore( open( file, 'rb'){ |io| io.read })
 	end
 
 	# Store an object to seralized form
 	def self.dump( object, file )
-		open( file, 'wb') do |io|
-			io.write( Marshal.dump( object ) )
-		end
+		return open( file, 'wb'){ |io| io.write( Marshal.dump( object ) ) }
 	end
 
 	# Set the local configuration file
