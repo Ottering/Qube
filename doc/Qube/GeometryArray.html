@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Qube::GeometryArray</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/scenegraph_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/scenegraph.rb">lib/scenegraph.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="SGObject.html">Qube::SGObject</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-%3C%3C">#<<</a></li>
+					
+					<li><a href="#method-i-%5B%5D">#[]</a></li>
+					
+					<li><a href="#method-i-%5B%5D%3D">#[]=</a></li>
+					
+					<li><a href="#method-i-add">#add</a></li>
+					
+					<li><a href="#method-i-append">#append</a></li>
+					
+					<li><a href="#method-i-delete">#delete</a></li>
+					
+					<li><a href="#method-i-get">#get</a></li>
+					
+					<li><a href="#method-i-meshes">#meshes</a></li>
+					
+					<li><a href="#method-i-remove">#remove</a></li>
+					
+					<li><a href="#method-i-set">#set</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Qube.html">Qube</a></li>
+				
+					<li><a href="../Qube/Animation.html">Qube::Animation</a></li>
+				
+					<li><a href="../Qube/AttachEvent.html">Qube::AttachEvent</a></li>
+				
+					<li><a href="../Qube/Bone.html">Qube::Bone</a></li>
+				
+					<li><a href="../Qube/Border.html">Qube::Border</a></li>
+				
+					<li><a href="../Qube/BoundingBox.html">Qube::BoundingBox</a></li>
+				
+					<li><a href="../Qube/BoundingSphere.html">Qube::BoundingSphere</a></li>
+				
+					<li><a href="../Qube/Bounds.html">Qube::Bounds</a></li>
+				
+					<li><a href="../Qube/Button.html">Qube::Button</a></li>
+				
+					<li><a href="../Qube/Camera.html">Qube::Camera</a></li>
+				
+					<li><a href="../Qube/Checkbox.html">Qube::Checkbox</a></li>
+				
+					<li><a href="../Qube/Client.html">Qube::Client</a></li>
+				
+					<li><a href="../Qube/Color.html">Qube::Color</a></li>
+				
+					<li><a href="../Qube/Connection.html">Qube::Connection</a></li>
+				
+					<li><a href="../Qube/Container.html">Qube::Container</a></li>
+				
+					<li><a href="../Qube/ContextDevice.html">Qube::ContextDevice</a></li>
+				
+					<li><a href="../Qube/Dispatcher.html">Qube::Dispatcher</a></li>
+				
+					<li><a href="../Qube/Event.html">Qube::Event</a></li>
+				
+					<li><a href="../Qube/FocusEvent.html">Qube::FocusEvent</a></li>
+				
+					<li><a href="../Qube/Fog.html">Qube::Fog</a></li>
+				
+					<li><a href="../Qube/Font.html">Qube::Font</a></li>
+				
+					<li><a href="../Qube/Frame.html">Qube::Frame</a></li>
+				
+					<li><a href="../Qube/Frustum.html">Qube::Frustum</a></li>
+				
+					<li><a href="../Qube/Geometry.html">Qube::Geometry</a></li>
+				
+					<li><a href="../Qube/GeometryArray.html">Qube::GeometryArray</a></li>
+				
+					<li><a href="../Qube/Host.html">Qube::Host</a></li>
+				
+					<li><a href="../Qube/Hover.html">Qube::Hover</a></li>
+				
+					<li><a href="../Qube/IconComponent.html">Qube::IconComponent</a></li>
+				
+					<li><a href="../Qube/InputDevice.html">Qube::InputDevice</a></li>
+				
+					<li><a href="../Qube/Keyboard.html">Qube::Keyboard</a></li>
+				
+					<li><a href="../Qube/Keyframe.html">Qube::Keyframe</a></li>
+				
+					<li><a href="../Qube/Label.html">Qube::Label</a></li>
+				
+					<li><a href="../Qube/LayoutEvent.html">Qube::LayoutEvent</a></li>
+				
+					<li><a href="../Qube/Light.html">Qube::Light</a></li>
+				
+					<li><a href="../Qube/LinkedLibraryException.html">Qube::LinkedLibraryException</a></li>
+				
+					<li><a href="../Qube/Localization.html">Qube::Localization</a></li>
+				
+					<li><a href="../Qube/Localize.html">Qube::Localize</a></li>
+				
+					<li><a href="../Qube/MediaLayer.html">Qube::MediaLayer</a></li>
+				
+					<li><a href="../Qube/Menu.html">Qube::Menu</a></li>
+				
+					<li><a href="../Qube/MenuBar.html">Qube::MenuBar</a></li>
+				
+					<li><a href="../Qube/MenuItem.html">Qube::MenuItem</a></li>
+				
+					<li><a href="../Qube/MissingResourceException.html">Qube::MissingResourceException</a></li>
+				
+					<li><a href="../Qube/Model.html">Qube::Model</a></li>
+				
+					<li><a href="../Qube/Mouse.html">Qube::Mouse</a></li>
+				
+					<li><a href="../Qube/NetworkTimeoutException.html">Qube::NetworkTimeoutException</a></li>
+				
+					<li><a href="../Qube/Physics.html">Qube::Physics</a></li>
+				
+					<li><a href="../Qube/Point.html">Qube::Point</a></li>
+				
+					<li><a href="../Qube/Pressable.html">Qube::Pressable</a></li>
+				
+					<li><a href="../Qube/ProgressBar.html">Qube::ProgressBar</a></li>
+				
+					<li><a href="../Qube/QTP.html">Qube::QTP</a></li>
+				
+					<li><a href="../Qube/QTP/Constants.html">Qube::QTP::Constants</a></li>
+				
+					<li><a href="../Qube/QTP/Message.html">Qube::QTP::Message</a></li>
+				
+					<li><a href="../Qube/QTP/Query.html">Qube::QTP::Query</a></li>
+				
+					<li><a href="../Qube/QTP/Resource.html">Qube::QTP::Resource</a></li>
+				
+					<li><a href="../Qube/QTP/Response.html">Qube::QTP::Response</a></li>
+				
+					<li><a href="../Qube/Rectangle.html">Qube::Rectangle</a></li>
+				
+					<li><a href="../Qube/RenderError.html">Qube::RenderError</a></li>
+				
+					<li><a href="../Qube/RenderWindow.html">Qube::RenderWindow</a></li>
+				
+					<li><a href="../Qube/Renderer.html">Qube::Renderer</a></li>
+				
+					<li><a href="../Qube/ResizeEvent.html">Qube::ResizeEvent</a></li>
+				
+					<li><a href="../Qube/Rotation.html">Qube::Rotation</a></li>
+				
+					<li><a href="../Qube/SGBaseObject.html">Qube::SGBaseObject</a></li>
+				
+					<li><a href="../Qube/SGExtender.html">Qube::SGExtender</a></li>
+				
+					<li><a href="../Qube/SGObject.html">Qube::SGObject</a></li>
+				
+					<li><a href="../Qube/Scene.html">Qube::Scene</a></li>
+				
+					<li><a href="../Qube/Scenegraph.html">Qube::Scenegraph</a></li>
+				
+					<li><a href="../Qube/ScrollPane.html">Qube::ScrollPane</a></li>
+				
+					<li><a href="../Qube/Selectable.html">Qube::Selectable</a></li>
+				
+					<li><a href="../Qube/Separator.html">Qube::Separator</a></li>
+				
+					<li><a href="../Qube/Server.html">Qube::Server</a></li>
+				
+					<li><a href="../Qube/Service.html">Qube::Service</a></li>
+				
+					<li><a href="../Qube/Shader.html">Qube::Shader</a></li>
+				
+					<li><a href="../Qube/ShaderFactory.html">Qube::ShaderFactory</a></li>
+				
+					<li><a href="../Qube/Size.html">Qube::Size</a></li>
+				
+					<li><a href="../Qube/SpotLight.html">Qube::SpotLight</a></li>
+				
+					<li><a href="../Qube/Stream.html">Qube::Stream</a></li>
+				
+					<li><a href="../Qube/Style.html">Qube::Style</a></li>
+				
+					<li><a href="../Qube/Style/Property.html">Qube::Style::Property</a></li>
+				
+					<li><a href="../Qube/Terrain.html">Qube::Terrain</a></li>
+				
+					<li><a href="../Qube/TextArea.html">Qube::TextArea</a></li>
+				
+					<li><a href="../Qube/TextComponent.html">Qube::TextComponent</a></li>
+				
+					<li><a href="../Qube/Texture.html">Qube::Texture</a></li>
+				
+					<li><a href="../Qube/Texture2D.html">Qube::Texture2D</a></li>
+				
+					<li><a href="../Qube/Texture3D.html">Qube::Texture3D</a></li>
+				
+					<li><a href="../Qube/TitleBar.html">Qube::TitleBar</a></li>
+				
+					<li><a href="../Qube/Toggle.html">Qube::Toggle</a></li>
+				
+					<li><a href="../Qube/Tracker.html">Qube::Tracker</a></li>
+				
+					<li><a href="../Qube/Tree.html">Qube::Tree</a></li>
+				
+					<li><a href="../Qube/Tree/Branch.html">Qube::Tree::Branch</a></li>
+				
+					<li><a href="../Qube/Tree/Leaf.html">Qube::Tree::Leaf</a></li>
+				
+					<li><a href="../Qube/UIComponent.html">Qube::UIComponent</a></li>
+				
+					<li><a href="../Qube/UUID.html">Qube::UUID</a></li>
+				
+					<li><a href="../Qube/Vector.html">Qube::Vector</a></li>
+				
+					<li><a href="../Qube/Vertex.html">Qube::Vertex</a></li>
+				
+					<li><a href="../Qube/VirtualUI.html">Qube::VirtualUI</a></li>
+				
+					<li><a href="../Qube/Xml.html">Qube::Xml</a></li>
+				
+					<li><a href="../Qube/XmlBlock.html">Qube::XmlBlock</a></li>
+				
+					<li><a href="../Qube/XmlDocument.html">Qube::XmlDocument</a></li>
+				
+					<li><a href="../Qube/XmlEntity.html">Qube::XmlEntity</a></li>
+				
+					<li><a href="../Toolkit.html">Toolkit</a></li>
+				
+					<li><a href="../Toolkit/Checksum.html">Toolkit::Checksum</a></li>
+				
+					<li><a href="../Toolkit/Constants.html">Toolkit::Constants</a></li>
+				
+					<li><a href="../Toolkit/Download.html">Toolkit::Download</a></li>
+				
+					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
+				
+					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
+				
+					<li><a href="../Resource.html">Resource</a></li>
+				
+					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
+				
+					<li><a href="../Resource/SphereGrid.html">Resource::SphereGrid</a></li>
+				
+					<li><a href="../Resource/SphereNode.html">Resource::SphereNode</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Qube::GeometryArray</h1>
+
+		<div id="description">
+			<p>
+Stores an array of <a href="Geometry.html">Geometry</a> objects.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">( name, instance = nil )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 463</span>
+463:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">instance</span> = <span class="ruby-keyword kw">nil</span> )
+464:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">name</span> )
+465:                         <span class="ruby-ivar">@geom</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+466:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%3C%3C"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">&lt;&lt;</span><span
+						class="method-args">( geometry )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Append a geometry to the array
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 486</span>
+486:                 <span class="ruby-keyword kw">def</span> <span class="ruby-operator">&lt;&lt;</span>( <span class="ruby-identifier">geometry</span> )
+487:                         <span class="ruby-ivar">@geom</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">geometry</span>
+488:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="GeometryArray.html#method-i-append">append</a>, <a href="GeometryArray.html#method-i-add">add</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]</span><span
+						class="method-args">( index )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return the geometry at the given index
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 474</span>
+474:                 <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>( <span class="ruby-identifier">index</span> )
+475:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@geom</span>[<span class="ruby-identifier">index</span>]
+476:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="GeometryArray.html#method-i-get">get</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="--method" class="method-detail ">
+				<a name="method-i-%5B%5D%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">[]=</span><span
+						class="method-args">( index, geometry )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Set the geometry at the given index
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="--source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 480</span>
+480:                 <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>( <span class="ruby-identifier">index</span>, <span class="ruby-identifier">geometry</span> )
+481:                         <span class="ruby-ivar">@geom</span>[<span class="ruby-identifier">index</span>] = <span class="ruby-identifier">geometry</span>
+482:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="GeometryArray.html#method-i-set">set</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="add-method" class="method-detail method-alias">
+				<a name="method-i-add"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">add</span><span
+						class="method-args">( geometry )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="GeometryArray.html#method-i-%3C%3C">&lt;&lt;</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="append-method" class="method-detail method-alias">
+				<a name="method-i-append"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">append</span><span
+						class="method-args">( geometry )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="GeometryArray.html#method-i-%3C%3C">&lt;&lt;</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="delete-method" class="method-detail ">
+				<a name="method-i-delete"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">delete</span><span
+						class="method-args">( index )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Deletes and returns the geometry at the given instance
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="delete-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 493</span>
+493:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>( <span class="ruby-identifier">index</span> )
+494:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@geom</span>.<span class="ruby-identifier">delete</span>( <span class="ruby-identifier">index</span> )
+495:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+				<div class="aliases">
+					Also aliased as: <a href="GeometryArray.html#method-i-remove">remove</a>
+				</div>
+				
+
+				
+			</div>
+
+		
+			<div id="get-method" class="method-detail method-alias">
+				<a name="method-i-get"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get</span><span
+						class="method-args">( index )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="GeometryArray.html#method-i-%5B%5D">[]</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="meshes-method" class="method-detail ">
+				<a name="method-i-meshes"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">meshes</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Return the list of geometries
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="meshes-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 469</span>
+469:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">meshes</span>()
+470:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@geom</span>
+471:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="remove-method" class="method-detail method-alias">
+				<a name="method-i-remove"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">remove</span><span
+						class="method-args">( index )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="GeometryArray.html#method-i-delete">delete</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="set-method" class="method-detail method-alias">
+				<a name="method-i-set"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">set</span><span
+						class="method-args">( index, geometry )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="GeometryArray.html#method-i-%5B%5D%3D">[]=</a>
+				</div>
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

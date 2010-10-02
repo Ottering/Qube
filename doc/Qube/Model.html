@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Qube::Model</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/models_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/models.rb">lib/models.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="GeometryArray.html">Qube::GeometryArray</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-create">::create</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><span class="include">Constants</span></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Qube.html">Qube</a></li>
+				
+					<li><a href="../Qube/Animation.html">Qube::Animation</a></li>
+				
+					<li><a href="../Qube/AttachEvent.html">Qube::AttachEvent</a></li>
+				
+					<li><a href="../Qube/Bone.html">Qube::Bone</a></li>
+				
+					<li><a href="../Qube/Border.html">Qube::Border</a></li>
+				
+					<li><a href="../Qube/BoundingBox.html">Qube::BoundingBox</a></li>
+				
+					<li><a href="../Qube/BoundingSphere.html">Qube::BoundingSphere</a></li>
+				
+					<li><a href="../Qube/Bounds.html">Qube::Bounds</a></li>
+				
+					<li><a href="../Qube/Button.html">Qube::Button</a></li>
+				
+					<li><a href="../Qube/Camera.html">Qube::Camera</a></li>
+				
+					<li><a href="../Qube/Checkbox.html">Qube::Checkbox</a></li>
+				
+					<li><a href="../Qube/Client.html">Qube::Client</a></li>
+				
+					<li><a href="../Qube/Color.html">Qube::Color</a></li>
+				
+					<li><a href="../Qube/Connection.html">Qube::Connection</a></li>
+				
+					<li><a href="../Qube/Container.html">Qube::Container</a></li>
+				
+					<li><a href="../Qube/ContextDevice.html">Qube::ContextDevice</a></li>
+				
+					<li><a href="../Qube/Dispatcher.html">Qube::Dispatcher</a></li>
+				
+					<li><a href="../Qube/Event.html">Qube::Event</a></li>
+				
+					<li><a href="../Qube/FocusEvent.html">Qube::FocusEvent</a></li>
+				
+					<li><a href="../Qube/Fog.html">Qube::Fog</a></li>
+				
+					<li><a href="../Qube/Font.html">Qube::Font</a></li>
+				
+					<li><a href="../Qube/Frame.html">Qube::Frame</a></li>
+				
+					<li><a href="../Qube/Frustum.html">Qube::Frustum</a></li>
+				
+					<li><a href="../Qube/Geometry.html">Qube::Geometry</a></li>
+				
+					<li><a href="../Qube/GeometryArray.html">Qube::GeometryArray</a></li>
+				
+					<li><a href="../Qube/Host.html">Qube::Host</a></li>
+				
+					<li><a href="../Qube/Hover.html">Qube::Hover</a></li>
+				
+					<li><a href="../Qube/IconComponent.html">Qube::IconComponent</a></li>
+				
+					<li><a href="../Qube/InputDevice.html">Qube::InputDevice</a></li>
+				
+					<li><a href="../Qube/Keyboard.html">Qube::Keyboard</a></li>
+				
+					<li><a href="../Qube/Keyframe.html">Qube::Keyframe</a></li>
+				
+					<li><a href="../Qube/Label.html">Qube::Label</a></li>
+				
+					<li><a href="../Qube/LayoutEvent.html">Qube::LayoutEvent</a></li>
+				
+					<li><a href="../Qube/Light.html">Qube::Light</a></li>
+				
+					<li><a href="../Qube/LinkedLibraryException.html">Qube::LinkedLibraryException</a></li>
+				
+					<li><a href="../Qube/Localization.html">Qube::Localization</a></li>
+				
+					<li><a href="../Qube/Localize.html">Qube::Localize</a></li>
+				
+					<li><a href="../Qube/MediaLayer.html">Qube::MediaLayer</a></li>
+				
+					<li><a href="../Qube/Menu.html">Qube::Menu</a></li>
+				
+					<li><a href="../Qube/MenuBar.html">Qube::MenuBar</a></li>
+				
+					<li><a href="../Qube/MenuItem.html">Qube::MenuItem</a></li>
+				
+					<li><a href="../Qube/MissingResourceException.html">Qube::MissingResourceException</a></li>
+				
+					<li><a href="../Qube/Model.html">Qube::Model</a></li>
+				
+					<li><a href="../Qube/Mouse.html">Qube::Mouse</a></li>
+				
+					<li><a href="../Qube/NetworkTimeoutException.html">Qube::NetworkTimeoutException</a></li>
+				
+					<li><a href="../Qube/Physics.html">Qube::Physics</a></li>
+				
+					<li><a href="../Qube/Point.html">Qube::Point</a></li>
+				
+					<li><a href="../Qube/Pressable.html">Qube::Pressable</a></li>
+				
+					<li><a href="../Qube/ProgressBar.html">Qube::ProgressBar</a></li>
+				
+					<li><a href="../Qube/QTP.html">Qube::QTP</a></li>
+				
+					<li><a href="../Qube/QTP/Constants.html">Qube::QTP::Constants</a></li>
+				
+					<li><a href="../Qube/QTP/Message.html">Qube::QTP::Message</a></li>
+				
+					<li><a href="../Qube/QTP/Query.html">Qube::QTP::Query</a></li>
+				
+					<li><a href="../Qube/QTP/Resource.html">Qube::QTP::Resource</a></li>
+				
+					<li><a href="../Qube/QTP/Response.html">Qube::QTP::Response</a></li>
+				
+					<li><a href="../Qube/Rectangle.html">Qube::Rectangle</a></li>
+				
+					<li><a href="../Qube/RenderError.html">Qube::RenderError</a></li>
+				
+					<li><a href="../Qube/RenderWindow.html">Qube::RenderWindow</a></li>
+				
+					<li><a href="../Qube/Renderer.html">Qube::Renderer</a></li>
+				
+					<li><a href="../Qube/ResizeEvent.html">Qube::ResizeEvent</a></li>
+				
+					<li><a href="../Qube/Rotation.html">Qube::Rotation</a></li>
+				
+					<li><a href="../Qube/SGBaseObject.html">Qube::SGBaseObject</a></li>
+				
+					<li><a href="../Qube/SGExtender.html">Qube::SGExtender</a></li>
+				
+					<li><a href="../Qube/SGObject.html">Qube::SGObject</a></li>
+				
+					<li><a href="../Qube/Scene.html">Qube::Scene</a></li>
+				
+					<li><a href="../Qube/Scenegraph.html">Qube::Scenegraph</a></li>
+				
+					<li><a href="../Qube/ScrollPane.html">Qube::ScrollPane</a></li>
+				
+					<li><a href="../Qube/Selectable.html">Qube::Selectable</a></li>
+				
+					<li><a href="../Qube/Separator.html">Qube::Separator</a></li>
+				
+					<li><a href="../Qube/Server.html">Qube::Server</a></li>
+				
+					<li><a href="../Qube/Service.html">Qube::Service</a></li>
+				
+					<li><a href="../Qube/Shader.html">Qube::Shader</a></li>
+				
+					<li><a href="../Qube/ShaderFactory.html">Qube::ShaderFactory</a></li>
+				
+					<li><a href="../Qube/Size.html">Qube::Size</a></li>
+				
+					<li><a href="../Qube/SpotLight.html">Qube::SpotLight</a></li>
+				
+					<li><a href="../Qube/Stream.html">Qube::Stream</a></li>
+				
+					<li><a href="../Qube/Style.html">Qube::Style</a></li>
+				
+					<li><a href="../Qube/Style/Property.html">Qube::Style::Property</a></li>
+				
+					<li><a href="../Qube/Terrain.html">Qube::Terrain</a></li>
+				
+					<li><a href="../Qube/TextArea.html">Qube::TextArea</a></li>
+				
+					<li><a href="../Qube/TextComponent.html">Qube::TextComponent</a></li>
+				
+					<li><a href="../Qube/Texture.html">Qube::Texture</a></li>
+				
+					<li><a href="../Qube/Texture2D.html">Qube::Texture2D</a></li>
+				
+					<li><a href="../Qube/Texture3D.html">Qube::Texture3D</a></li>
+				
+					<li><a href="../Qube/TitleBar.html">Qube::TitleBar</a></li>
+				
+					<li><a href="../Qube/Toggle.html">Qube::Toggle</a></li>
+				
+					<li><a href="../Qube/Tracker.html">Qube::Tracker</a></li>
+				
+					<li><a href="../Qube/Tree.html">Qube::Tree</a></li>
+				
+					<li><a href="../Qube/Tree/Branch.html">Qube::Tree::Branch</a></li>
+				
+					<li><a href="../Qube/Tree/Leaf.html">Qube::Tree::Leaf</a></li>
+				
+					<li><a href="../Qube/UIComponent.html">Qube::UIComponent</a></li>
+				
+					<li><a href="../Qube/UUID.html">Qube::UUID</a></li>
+				
+					<li><a href="../Qube/Vector.html">Qube::Vector</a></li>
+				
+					<li><a href="../Qube/Vertex.html">Qube::Vertex</a></li>
+				
+					<li><a href="../Qube/VirtualUI.html">Qube::VirtualUI</a></li>
+				
+					<li><a href="../Qube/Xml.html">Qube::Xml</a></li>
+				
+					<li><a href="../Qube/XmlBlock.html">Qube::XmlBlock</a></li>
+				
+					<li><a href="../Qube/XmlDocument.html">Qube::XmlDocument</a></li>
+				
+					<li><a href="../Qube/XmlEntity.html">Qube::XmlEntity</a></li>
+				
+					<li><a href="../Toolkit.html">Toolkit</a></li>
+				
+					<li><a href="../Toolkit/Checksum.html">Toolkit::Checksum</a></li>
+				
+					<li><a href="../Toolkit/Constants.html">Toolkit::Constants</a></li>
+				
+					<li><a href="../Toolkit/Download.html">Toolkit::Download</a></li>
+				
+					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
+				
+					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
+				
+					<li><a href="../Resource.html">Resource</a></li>
+				
+					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
+				
+					<li><a href="../Resource/SphereGrid.html">Resource::SphereGrid</a></li>
+				
+					<li><a href="../Resource/SphereNode.html">Resource::SphereNode</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Qube::Model</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="MF_GEOMETRY">MF_GEOMETRY</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_TEXTURE">MF_TEXTURE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_COORD_BYTES">MF_COORD_BYTES</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_GL_TYPE">MF_GL_TYPE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_GEOM_MESH">MF_GEOM_MESH</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_GEOM_NAME">MF_GEOM_NAME</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_TEX_CHANNELS">MF_TEX_CHANNELS</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_TEX_MIPMAP">MF_TEX_MIPMAP</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_TEX_ARGS">MF_TEX_ARGS</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="MF_TEX_MODE">MF_TEX_MODE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+				<dt><a name="RBO_FILE">RBO_FILE</a></dt>
+				
+				<dd class="description"></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="create-method" class="method-detail ">
+				<a name="method-c-create"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">create</span><span
+						class="method-args">( name, zip_source, instance = nil )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="create-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/models.rb, line 168</span>
+168:                 <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">create</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">zip_source</span>, <span class="ruby-identifier">instance</span> = <span class="ruby-keyword kw">nil</span> )
+169:                         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Model</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">instance</span> ) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance</span>
+170: 
+171:                         <span class="ruby-identifier">zip</span> = <span class="ruby-constant">Zip</span><span class="ruby-operator">::</span><span class="ruby-constant">ZipFile</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">zip_source</span> )
+172:                         <span class="ruby-ivar">@manifest</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">restore</span>( <span class="ruby-identifier">zip</span>.<span class="ruby-identifier">get_output_stream</span>( <span class="ruby-identifier">zip</span>.<span class="ruby-identifier">get_entry</span>( <span class="ruby-constant">RBO_FILE</span> ) ) )
+173: 
+174:                         <span class="ruby-comment cmt"># TODO: Read zip data to create geometry/normal/bone instances</span>
+175: 
+176:                         <span class="ruby-comment cmt"># Generate geometries</span>
+177:                         <span class="ruby-ivar">@manifest</span>[ <span class="ruby-constant">MF_GEOMETRY</span> ].<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">geo</span><span class="ruby-operator">|</span>
+178: 
+179:                                 <span class="ruby-comment cmt"># Create vertex array</span>
+180:                                 <span class="ruby-identifier">vbit</span> = <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_COORD_BYTES</span> ]
+181:                                 <span class="ruby-identifier">vcor</span> = <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_GL_TYPE</span> ]
+182:                                 <span class="ruby-identifier">verts</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+183:                                 <span class="ruby-identifier">zip</span>.<span class="ruby-identifier">get_output_stream</span>( <span class="ruby-identifier">zip</span>.<span class="ruby-identifier">get_entry</span>( <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_GEOM_MESH</span> ] ) ) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+184:                                         <span class="ruby-identifier">verts</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">read_bytes</span>( <span class="ruby-identifier">vbit</span> ) <span class="ruby-keyword kw">until</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">eof?</span>
+185:                                 <span class="ruby-keyword kw">end</span>
+186: 
+187:                                 <span class="ruby-comment cmt"># Create pixel array (texture)</span>
+188:                                 <span class="ruby-identifier">txch</span> = <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_TEX_CHANNELS</span> ]
+189:                                 <span class="ruby-identifier">txmm</span> = <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_TEX_MIPMAPS</span> ]
+190:                                 <span class="ruby-identifier">txar</span> = <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_TEX_ARGS</span> ]
+191:                                 <span class="ruby-identifier">texture</span> = <span class="ruby-keyword kw">nil</span>
+192:                                 <span class="ruby-identifier">zip</span>.<span class="ruby-identifier">get_output_stream</span>( <span class="ruby-identifier">zip</span>.<span class="ruby-identifier">get_entry</span>( <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_TEXTURE</span> ] ) ) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+193:                                         <span class="ruby-identifier">texture</span> = (<span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_TEX_MODE</span> ].<span class="ruby-identifier">eql?</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TEXTURE_2D</span>) <span class="ruby-operator">?</span>
+194:                                                 <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Texture2D</span>( <span class="ruby-identifier">io</span>.<span class="ruby-identifier">read</span>, <span class="ruby-identifier">txar</span>, <span class="ruby-identifier">txch</span>, <span class="ruby-identifier">txmm</span> ) <span class="ruby-operator">:</span> <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Texture3D</span>( <span class="ruby-identifier">io</span>.<span class="ruby-identifier">read</span>, <span class="ruby-identifier">txar</span>, <span class="ruby-identifier">txch</span>, <span class="ruby-identifier">txmm</span> )
+195:                                 <span class="ruby-keyword kw">end</span>
+196:                                 
+197:                                 <span class="ruby-comment cmt"># Attach geometry instance</span>
+198:                                 <span class="ruby-identifier">append</span> <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Geometry</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">geo</span>[ <span class="ruby-constant">MF_GEOM_NAME</span> ], <span class="ruby-identifier">verts</span>, <span class="ruby-identifier">texture</span>, <span class="ruby-identifier">vcor</span> )
+199:                         <span class="ruby-keyword kw">end</span>
+200: 
+201:                         <span class="ruby-comment cmt"># Initialize and generate display list</span>
+202:                         <span class="ruby-identifier">model</span> = <span class="ruby-constant">Model</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">name</span> )
+203:                         <span class="ruby-identifier">model</span>.<span class="ruby-identifier">begin</span>()
+204:                                 <span class="ruby-identifier">meshes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">geometry</span><span class="ruby-operator">|</span>
+205:                                         <span class="ruby-identifier">geometry</span>.<span class="ruby-identifier">draw</span>()
+206:                                 <span class="ruby-keyword kw">end</span>
+207:                         <span class="ruby-identifier">model</span>.<span class="ruby-identifier">end</span>()
+208: 
+209:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">model</span>
+210:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">( name, pos = Qube::Point.new, rot = Qube::Rotation.new, instance = nil )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/models.rb, line 164</span>
+164:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">pos</span> = <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Point</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">rot</span> = <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Rotation</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">instance</span> = <span class="ruby-keyword kw">nil</span> )
+165:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">pos</span>, <span class="ruby-identifier">rot</span>, <span class="ruby-identifier">instance</span> )
+166:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
