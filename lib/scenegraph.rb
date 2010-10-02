@@ -495,7 +495,7 @@ module Qube
 	end
 
 	# Terrain; incomplete...
-	class Terrain < StaticGeometry
+	class Terrain < Geometry
 
 		def initialize( name, vertex_array, texture, type = GL::TRIANGLES, buffer = GL::ARRAY_BUFFER, instance = nil )
 			super( name, vertex_array, texture, type, buffer, instance )

@@ -1,1 +1,1 @@
-ruby -I ./lib lib/app.rb
+ruby -I './lib' 'lib/app.rb'

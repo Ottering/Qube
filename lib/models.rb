@@ -112,7 +112,7 @@ module Qube
 		def length()
 			return @frames.size
 		end
-		alias :siize :size
+		alias :size :length
 		
 		def frames()
 			return @frames
@@ -145,7 +145,6 @@ module Qube
 	end
 
 	class Model < Qube::GeometryArray
-		include Constants
 		require 'zip/zip'
 		
 		MF_GEOMETRY		= 'Geometry'
