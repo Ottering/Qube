@@ -1,3 +1,5 @@
+require 'digest/md5'
+
 QENV = Hash.new
 
 # Core module of the Qube engine libraries. All components of the engine will appear within this module.  Packages and
@@ -45,8 +47,25 @@ module Qube
 		cfg.each_pair { |key, val| QENV[key] = val }
 	end
 	
+	# Stores the local configuration file
 	def self.store_config( file )
 		dump( QENV, file )
+	end
+	
+	# Returns the checksum of the file as a String
+	# * file:  File to be read
+	# * digest:  Digest to be used for calculating the checksum; default:  MD5
+	def self.checksum( file, digest = Digest::MD5.new )
+		open( file, 'r'){ |io| digest.update( io.readpartial( 1024 ) ) until io.eof }
+		return digest.digest.to_s
+	end
+	
+	# Returns true if the file's checksum is correct
+	# * file:  File to be read
+	# * expected:  Expected checksum string
+	# * digest:  Digest to be used (see: Qube#checksum)
+	def self.same?( file, expected, digest = Digest::MD5.new )
+		return checksum( file, digest ).eql? expected
 	end
 end
 
