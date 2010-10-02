@@ -28,7 +28,7 @@ module Qube
 		# Perform the GL operations to draw the scene.  The current view is translated and rotated as per the stored
 		# center and rotation before drawing begins.  Each child is called in order, based upon its index in the
 		# scenegraph.
-		def draw()
+		def draw( renderer )
 			GL.LoadIdentity()
 			GL.Translate( center.x, center.y, center.z ) unless center.identity?
 			unless rotation.identity?
@@ -38,9 +38,7 @@ module Qube
 			end
 
 			# Draw children
-			children.each do |child|
-				child.draw()
-			end
+			children.each {|child| child.draw() unless renderer.cull? child }
 		end
 
 		# Traverses the scene, printing simple data for each child.

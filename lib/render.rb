@@ -1,5 +1,18 @@
 module Qube
 
+	# Stores the methods to be performed by the culling routines.
+	class CullRoutine
+		
+		def initialize( script )
+			@script = (script.is_a? String) ? script : open( script, 'r'){|io| io.read }
+		end
+		
+		# Runs the routine.  Bindings must be supplied for renderer.
+		def run( bindings )
+			return eval( script, bindings )
+		end
+	end
+
 	# The rendering context.  This class stores an instance of the current camera, as well as a list of all attached
 	# cameras.  Views may be canged by specifying the currently active camera.
 	class Renderer
@@ -25,7 +38,7 @@ module Qube
 			GL.Rotate( rot.x, 1.0, 0.0, 0.0 )
 			GL.Rotate( rot.y, 0.0, 1.0, 0.0 )
 			GL.Rotate( rot.z, 0.0, 0.0, 1.0 )
-			@scene.render( self ) if @scene
+			@scene.draw( self ) if @scene
 			GL.PopMatrix()
 		end
 

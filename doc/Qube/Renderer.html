@@ -146,6 +146,8 @@
 				
 					<li><a href="../Qube/ContextDevice.html">Qube::ContextDevice</a></li>
 				
+					<li><a href="../Qube/CullRoutine.html">Qube::CullRoutine</a></li>
+				
 					<li><a href="../Qube/Dispatcher.html">Qube::Dispatcher</a></li>
 				
 					<li><a href="../Qube/Event.html">Qube::Event</a></li>
@@ -182,8 +184,6 @@
 				
 					<li><a href="../Qube/Light.html">Qube::Light</a></li>
 				
-					<li><a href="../Qube/LinkedLibraryException.html">Qube::LinkedLibraryException</a></li>
-				
 					<li><a href="../Qube/Localization.html">Qube::Localization</a></li>
 				
 					<li><a href="../Qube/Localize.html">Qube::Localize</a></li>
@@ -196,13 +196,9 @@
 				
 					<li><a href="../Qube/MenuItem.html">Qube::MenuItem</a></li>
 				
-					<li><a href="../Qube/MissingResourceException.html">Qube::MissingResourceException</a></li>
-				
 					<li><a href="../Qube/Model.html">Qube::Model</a></li>
 				
 					<li><a href="../Qube/Mouse.html">Qube::Mouse</a></li>
-				
-					<li><a href="../Qube/NetworkTimeoutException.html">Qube::NetworkTimeoutException</a></li>
 				
 					<li><a href="../Qube/Physics.html">Qube::Physics</a></li>
 				
@@ -225,8 +221,6 @@
 					<li><a href="../Qube/QTP/Response.html">Qube::QTP::Response</a></li>
 				
 					<li><a href="../Qube/Rectangle.html">Qube::Rectangle</a></li>
-				
-					<li><a href="../Qube/RenderError.html">Qube::RenderError</a></li>
 				
 					<li><a href="../Qube/RenderWindow.html">Qube::RenderWindow</a></li>
 				
@@ -312,6 +306,16 @@
 				
 					<li><a href="../Qube/XmlEntity.html">Qube::XmlEntity</a></li>
 				
+					<li><a href="../Error.html">Error</a></li>
+				
+					<li><a href="../Error/LinkedLibraryException.html">Error::LinkedLibraryException</a></li>
+				
+					<li><a href="../Error/MissingResourceException.html">Error::MissingResourceException</a></li>
+				
+					<li><a href="../Error/NetworkTimeoutException.html">Error::NetworkTimeoutException</a></li>
+				
+					<li><a href="../Error/RenderError.html">Error::RenderError</a></li>
+				
 					<li><a href="../Toolkit.html">Toolkit</a></li>
 				
 					<li><a href="../Toolkit/Checksum.html">Toolkit::Checksum</a></li>
@@ -382,15 +386,15 @@ specifying the currently active camera.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 7</span>
- 7:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">window</span>, <span class="ruby-identifier">camera</span> = <span class="ruby-keyword kw">nil</span> )
- 8:                         <span class="ruby-ivar">@window</span> = <span class="ruby-identifier">window</span>
- 9:                         <span class="ruby-ivar">@cameras</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
-10:                         <span class="ruby-ivar">@scene</span> = <span class="ruby-keyword kw">nil</span>
-11: 
-12:                         <span class="ruby-identifier">camera</span> = <span class="ruby-constant">Camera</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'Default Camera'</span>, <span class="ruby-constant">Frustum</span>.<span class="ruby-identifier">new</span>() ) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">camera</span>
-13:                         <span class="ruby-identifier">attach_camera</span> <span class="ruby-identifier">camera</span>
-14:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/render.rb, line 20</span>
+20:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">window</span>, <span class="ruby-identifier">camera</span> = <span class="ruby-keyword kw">nil</span> )
+21:                         <span class="ruby-ivar">@window</span> = <span class="ruby-identifier">window</span>
+22:                         <span class="ruby-ivar">@cameras</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+23:                         <span class="ruby-ivar">@scene</span> = <span class="ruby-keyword kw">nil</span>
+24: 
+25:                         <span class="ruby-identifier">camera</span> = <span class="ruby-constant">Camera</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'Default Camera'</span>, <span class="ruby-constant">Frustum</span>.<span class="ruby-identifier">new</span>() ) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">camera</span>
+26:                         <span class="ruby-identifier">attach_camera</span> <span class="ruby-identifier">camera</span>
+27:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -435,12 +439,12 @@ make_active:  if true, this camera is now the active view
 					<div class="method-source-code"
 						id="attach-camera-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 50</span>
-50:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attach_camera</span>( <span class="ruby-identifier">cam</span>, <span class="ruby-identifier">make_active</span> = <span class="ruby-keyword kw">true</span> )
-51:                         <span class="ruby-ivar">@cameras</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cam</span>
-52:                         <span class="ruby-identifier">set_current</span> <span class="ruby-ivar">@cameras</span>.<span class="ruby-identifier">index</span>( <span class="ruby-identifier">cam</span> ) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">make_active</span>
-53:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@cameras</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
-54:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/render.rb, line 63</span>
+63:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attach_camera</span>( <span class="ruby-identifier">cam</span>, <span class="ruby-identifier">make_active</span> = <span class="ruby-keyword kw">true</span> )
+64:                         <span class="ruby-ivar">@cameras</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">cam</span>
+65:                         <span class="ruby-identifier">set_current</span> <span class="ruby-ivar">@cameras</span>.<span class="ruby-identifier">index</span>( <span class="ruby-identifier">cam</span> ) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">make_active</span>
+66:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@cameras</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+67:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -474,10 +478,10 @@ the passed argument.
 					<div class="method-source-code"
 						id="camera-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 38</span>
-38:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">camera</span>( <span class="ruby-identifier">cam</span> = <span class="ruby-keyword kw">nil</span> )
-39:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cam</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@cameras</span>[<span class="ruby-identifier">cam</span>] <span class="ruby-operator">:</span> <span class="ruby-ivar">@ccam</span>
-40:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/render.rb, line 51</span>
+51:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">camera</span>( <span class="ruby-identifier">cam</span> = <span class="ruby-keyword kw">nil</span> )
+52:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cam</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@cameras</span>[<span class="ruby-identifier">cam</span>] <span class="ruby-operator">:</span> <span class="ruby-ivar">@ccam</span>
+53:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -508,7 +512,8 @@ the passed argument.
 					<p>
 Performs the culling pass on the passed node.  Returns whether or not the
 node is to be culled.  In future versions, this will be handled by each of
-the CullRoutine objects (Qube::CullRoutine).
+the <a href="CullRoutine.html">CullRoutine</a> objects (<a
+href="CullRoutine.html">Qube::CullRoutine</a>).
 </p>
 					
 
@@ -516,38 +521,38 @@ the CullRoutine objects (Qube::CullRoutine).
 					<div class="method-source-code"
 						id="cull--source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 63</span>
-63:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cull?</span>( <span class="ruby-identifier">node</span> )
-64:                         <span class="ruby-comment cmt"># Depth Test with bounding (sphere) handling</span>
-65:                         <span class="ruby-identifier">dist</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>
-66:                         <span class="ruby-identifier">frustum</span> = <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>
-67:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span>(
-68:                                         (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">bounded?</span>) <span class="ruby-operator">?</span> 
-69:                                         (<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">near</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">far</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span>) <span class="ruby-operator">:</span> 
-70:                                         <span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">depth</span> 
-71:                                 ).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">dist</span>
-72:                         
-73:                         <span class="ruby-comment cmt"># Perform vertical volume test</span>
-74:                         <span class="ruby-identifier">node_h</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">y</span>
-75:                         <span class="ruby-identifier">frustum_h</span> = <span class="ruby-identifier">dist</span> * <span class="ruby-value">2</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">tan</span>( <span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">angle</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span> )
-76:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span>(
-77:                                         (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">bounded?</span>) <span class="ruby-operator">?</span> 
-78:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_h</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">raidus</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_h</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">raidus</span>) <span class="ruby-operator">:</span> 
-79:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_h</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_h</span>) 
-80:                                 ).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node_h</span>
-81:                         
-82:                         <span class="ruby-comment cmt"># Perform horizontal volume test</span>
-83:                         <span class="ruby-identifier">node_x</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">x</span>
-84:                         <span class="ruby-identifier">frustum_w</span> = <span class="ruby-identifier">window</span>.<span class="ruby-identifier">aspect</span> * <span class="ruby-identifier">frustum_h</span>
-85:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span>(
-86:                                         (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">bounded?</span>) <span class="ruby-operator">?</span>
-87:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_w</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_w</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span> ) <span class="ruby-operator">:</span>
-88:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_w</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_w</span> )
-89:                                 ).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node_x</span>
-90:                         
-91:                         <span class="ruby-comment cmt"># Node is OK</span>
-92:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
-93:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 76</span>
+ 76:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cull?</span>( <span class="ruby-identifier">node</span> )
+ 77:                         <span class="ruby-comment cmt"># Depth Test with bounding (sphere) handling</span>
+ 78:                         <span class="ruby-identifier">dist</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">position</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>
+ 79:                         <span class="ruby-identifier">frustum</span> = <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>
+ 80:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span>(
+ 81:                                         (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">bounded?</span>) <span class="ruby-operator">?</span> 
+ 82:                                         (<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">near</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">far</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span>) <span class="ruby-operator">:</span> 
+ 83:                                         <span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">depth</span> 
+ 84:                                 ).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">dist</span>
+ 85:                         
+ 86:                         <span class="ruby-comment cmt"># Perform vertical volume test</span>
+ 87:                         <span class="ruby-identifier">node_h</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">y</span>
+ 88:                         <span class="ruby-identifier">frustum_h</span> = <span class="ruby-identifier">dist</span> * <span class="ruby-value">2</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">tan</span>( <span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">angle</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span> )
+ 89:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span>(
+ 90:                                         (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">bounded?</span>) <span class="ruby-operator">?</span> 
+ 91:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_h</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">raidus</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_h</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">raidus</span>) <span class="ruby-operator">:</span> 
+ 92:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_h</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_h</span>) 
+ 93:                                 ).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node_h</span>
+ 94:                         
+ 95:                         <span class="ruby-comment cmt"># Perform horizontal volume test</span>
+ 96:                         <span class="ruby-identifier">node_x</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>.<span class="ruby-identifier">x</span>
+ 97:                         <span class="ruby-identifier">frustum_w</span> = <span class="ruby-identifier">window</span>.<span class="ruby-identifier">aspect</span> * <span class="ruby-identifier">frustum_h</span>
+ 98:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">unless</span>(
+ 99:                                         (<span class="ruby-identifier">node</span>.<span class="ruby-identifier">bounded?</span>) <span class="ruby-operator">?</span>
+100:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_w</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_w</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">bounds</span>.<span class="ruby-identifier">radius</span> ) <span class="ruby-operator">:</span>
+101:                                         (<span class="ruby-operator">-</span><span class="ruby-identifier">frustum_w</span> <span class="ruby-operator">..</span> <span class="ruby-identifier">frustum_w</span> )
+102:                                 ).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node_x</span>
+103:                         
+104:                         <span class="ruby-comment cmt"># Node is OK</span>
+105:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+106:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -609,10 +614,10 @@ Deletes and returns the specified camera
 					<div class="method-source-code"
 						id="detach-camera-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 57</span>
-57:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">detach_camera</span>( <span class="ruby-identifier">cam</span> )
-58:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@cameras</span>.<span class="ruby-identifier">delete</span>( <span class="ruby-identifier">cam</span> )
-59:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/render.rb, line 70</span>
+70:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">detach_camera</span>( <span class="ruby-identifier">cam</span> )
+71:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@cameras</span>.<span class="ruby-identifier">delete</span>( <span class="ruby-identifier">cam</span> )
+72:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -646,20 +651,20 @@ view.  Returns false if the current view has no scene.
 					<div class="method-source-code"
 						id="draw-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 18</span>
-18:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw</span>()
-19:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">scene</span>
-20:                         <span class="ruby-identifier">rot</span> = <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">rotation</span>
-21:                         <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>
-22: 
-23:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">PushMatrix</span>()
-24:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Translate</span>( <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">y</span>, <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">z</span> )
-25:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Rotate</span>( <span class="ruby-identifier">rot</span>.<span class="ruby-identifier">x</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span> )
-26:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Rotate</span>( <span class="ruby-identifier">rot</span>.<span class="ruby-identifier">y</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span> )
-27:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Rotate</span>( <span class="ruby-identifier">rot</span>.<span class="ruby-identifier">z</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span> )
-28:                         <span class="ruby-ivar">@scene</span>.<span class="ruby-identifier">render</span>( <span class="ruby-keyword kw">self</span> ) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@scene</span>
-29:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">PopMatrix</span>()
-30:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/render.rb, line 31</span>
+31:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw</span>()
+32:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">scene</span>
+33:                         <span class="ruby-identifier">rot</span> = <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">rotation</span>
+34:                         <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">position</span>
+35: 
+36:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">PushMatrix</span>()
+37:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Translate</span>( <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">x</span>, <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">y</span>, <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">z</span> )
+38:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Rotate</span>( <span class="ruby-identifier">rot</span>.<span class="ruby-identifier">x</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span> )
+39:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Rotate</span>( <span class="ruby-identifier">rot</span>.<span class="ruby-identifier">y</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span>, <span class="ruby-value">0.0</span> )
+40:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Rotate</span>( <span class="ruby-identifier">rot</span>.<span class="ruby-identifier">z</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">1.0</span> )
+41:                         <span class="ruby-ivar">@scene</span>.<span class="ruby-identifier">draw</span>( <span class="ruby-keyword kw">self</span> ) <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@scene</span>
+42:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">PopMatrix</span>()
+43:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -692,10 +697,10 @@ Returns the scene associated with the current view.
 					<div class="method-source-code"
 						id="scene-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 33</span>
-33:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scene</span>()
-34:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">scene</span>
-35:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/render.rb, line 46</span>
+46:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scene</span>()
+47:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">scene</span>
+48:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -728,10 +733,10 @@ Sets the currently active camera
 					<div class="method-source-code"
 						id="set-current-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/render.rb, line 44</span>
-44:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_current</span>( <span class="ruby-identifier">cam</span> )
-45:                         <span class="ruby-ivar">@ccam</span> = <span class="ruby-identifier">camera</span>( <span class="ruby-identifier">cam</span> )
-46:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/render.rb, line 57</span>
+57:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_current</span>( <span class="ruby-identifier">cam</span> )
+58:                         <span class="ruby-ivar">@ccam</span> = <span class="ruby-identifier">camera</span>( <span class="ruby-identifier">cam</span> )
+59:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

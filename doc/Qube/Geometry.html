@@ -138,6 +138,8 @@
 				
 					<li><a href="../Qube/ContextDevice.html">Qube::ContextDevice</a></li>
 				
+					<li><a href="../Qube/CullRoutine.html">Qube::CullRoutine</a></li>
+				
 					<li><a href="../Qube/Dispatcher.html">Qube::Dispatcher</a></li>
 				
 					<li><a href="../Qube/Event.html">Qube::Event</a></li>
@@ -174,8 +176,6 @@
 				
 					<li><a href="../Qube/Light.html">Qube::Light</a></li>
 				
-					<li><a href="../Qube/LinkedLibraryException.html">Qube::LinkedLibraryException</a></li>
-				
 					<li><a href="../Qube/Localization.html">Qube::Localization</a></li>
 				
 					<li><a href="../Qube/Localize.html">Qube::Localize</a></li>
@@ -188,13 +188,9 @@
 				
 					<li><a href="../Qube/MenuItem.html">Qube::MenuItem</a></li>
 				
-					<li><a href="../Qube/MissingResourceException.html">Qube::MissingResourceException</a></li>
-				
 					<li><a href="../Qube/Model.html">Qube::Model</a></li>
 				
 					<li><a href="../Qube/Mouse.html">Qube::Mouse</a></li>
-				
-					<li><a href="../Qube/NetworkTimeoutException.html">Qube::NetworkTimeoutException</a></li>
 				
 					<li><a href="../Qube/Physics.html">Qube::Physics</a></li>
 				
@@ -217,8 +213,6 @@
 					<li><a href="../Qube/QTP/Response.html">Qube::QTP::Response</a></li>
 				
 					<li><a href="../Qube/Rectangle.html">Qube::Rectangle</a></li>
-				
-					<li><a href="../Qube/RenderError.html">Qube::RenderError</a></li>
 				
 					<li><a href="../Qube/RenderWindow.html">Qube::RenderWindow</a></li>
 				
@@ -304,6 +298,16 @@
 				
 					<li><a href="../Qube/XmlEntity.html">Qube::XmlEntity</a></li>
 				
+					<li><a href="../Error.html">Error</a></li>
+				
+					<li><a href="../Error/LinkedLibraryException.html">Error::LinkedLibraryException</a></li>
+				
+					<li><a href="../Error/MissingResourceException.html">Error::MissingResourceException</a></li>
+				
+					<li><a href="../Error/NetworkTimeoutException.html">Error::NetworkTimeoutException</a></li>
+				
+					<li><a href="../Error/RenderError.html">Error::RenderError</a></li>
+				
 					<li><a href="../Toolkit.html">Toolkit</a></li>
 				
 					<li><a href="../Toolkit/Checksum.html">Toolkit::Checksum</a></li>
@@ -372,32 +376,32 @@ Simple geometry object.  Uses VertexBuffers and binds a texture to it.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 408</span>
-408:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">vertex_array</span>, <span class="ruby-identifier">texture</span>, <span class="ruby-identifier">type</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TRIANGLES</span>, <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">ARRAY_BUFFER</span>, <span class="ruby-identifier">instance</span> = <span class="ruby-keyword kw">nil</span> )
-409:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">name</span> )
-410:                         <span class="ruby-ivar">@type</span> = <span class="ruby-identifier">type</span>
-411:                         <span class="ruby-ivar">@mode</span> = <span class="ruby-identifier">buffer</span>
-412:                         <span class="ruby-ivar">@texture</span> = (<span class="ruby-identifier">texture</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Texture</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">texture</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Texture2D</span>.<span class="ruby-identifier">create</span>( <span class="ruby-identifier">texture</span> )
-413: 
-414:                         <span class="ruby-comment cmt"># Generate Vertex Buffer</span>
-415:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">GenBuffers</span>( <span class="ruby-value">1</span>, <span class="ruby-ivar">@bid</span> )
-416:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">BindBuffer</span>( <span class="ruby-ivar">@mode</span>, <span class="ruby-ivar">@bid</span> )
-417:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">BufferData</span>( <span class="ruby-ivar">@mode</span>, <span class="ruby-identifier">vertex_array</span>.<span class="ruby-identifier">length</span>, <span class="ruby-identifier">vertex_array</span>, <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">STATIC_DRAW</span> )
-418: 
-419:                         <span class="ruby-comment cmt"># Assemble Display List</span>
-420:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">begin</span>()
-421:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">VertexPointer</span>(
-422:                                         <span class="ruby-identifier">gl_type</span>( <span class="ruby-identifier">type</span> ),                                                                   <span class="ruby-comment cmt"># coordinates</span>
-423:                                         <span class="ruby-identifier">gl_type</span>( <span class="ruby-identifier">vertex_array</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">class</span> ),                                  <span class="ruby-comment cmt"># GL data-type</span>
-424:                                         <span class="ruby-value">0</span>,                                                                                                 <span class="ruby-comment cmt"># stride</span>
-425:                                         <span class="ruby-keyword kw">nil</span>                                                                                                        <span class="ruby-comment cmt">#-! unknown</span>
-426:                                 )
-427:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">BindTexture</span>( <span class="ruby-ivar">@texture</span>.<span class="ruby-identifier">mode</span>, <span class="ruby-ivar">@texture</span>.<span class="ruby-identifier">id</span> )
-428:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">BindBuffer</span>( <span class="ruby-ivar">@mode</span>, <span class="ruby-ivar">@bid</span> )
-429:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">EnableClientState</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERTEX_ARRAY</span> )
-430:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">DrawArrays</span>( <span class="ruby-ivar">@type</span>, <span class="ruby-value">0</span>, ( <span class="ruby-identifier">vertex_array</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> ( <span class="ruby-identifier">vertex_array</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">size</span> * ( <span class="ruby-value">3</span> <span class="ruby-operator">**</span> <span class="ruby-value">1</span> ) ) ).<span class="ruby-identifier">to_i</span> )
-431:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">end</span>()
-432:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 406</span>
+406:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">vertex_array</span>, <span class="ruby-identifier">texture</span>, <span class="ruby-identifier">type</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TRIANGLES</span>, <span class="ruby-identifier">buffer</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">ARRAY_BUFFER</span>, <span class="ruby-identifier">instance</span> = <span class="ruby-keyword kw">nil</span> )
+407:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">name</span> )
+408:                         <span class="ruby-ivar">@type</span> = <span class="ruby-identifier">type</span>
+409:                         <span class="ruby-ivar">@mode</span> = <span class="ruby-identifier">buffer</span>
+410:                         <span class="ruby-ivar">@texture</span> = (<span class="ruby-identifier">texture</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Texture</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">texture</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Texture2D</span>.<span class="ruby-identifier">create</span>( <span class="ruby-identifier">texture</span> )
+411: 
+412:                         <span class="ruby-comment cmt"># Generate Vertex Buffer</span>
+413:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">GenBuffers</span>( <span class="ruby-value">1</span>, <span class="ruby-ivar">@bid</span> )
+414:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">BindBuffer</span>( <span class="ruby-ivar">@mode</span>, <span class="ruby-ivar">@bid</span> )
+415:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">BufferData</span>( <span class="ruby-ivar">@mode</span>, <span class="ruby-identifier">vertex_array</span>.<span class="ruby-identifier">length</span>, <span class="ruby-identifier">vertex_array</span>, <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">STATIC_DRAW</span> )
+416: 
+417:                         <span class="ruby-comment cmt"># Assemble Display List</span>
+418:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">begin</span>()
+419:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">VertexPointer</span>(
+420:                                         <span class="ruby-identifier">gl_type</span>( <span class="ruby-identifier">type</span> ),                                                                   <span class="ruby-comment cmt"># coordinates</span>
+421:                                         <span class="ruby-identifier">gl_type</span>( <span class="ruby-identifier">vertex_array</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">class</span> ),                                  <span class="ruby-comment cmt"># GL data-type</span>
+422:                                         <span class="ruby-value">0</span>,                                                                                                 <span class="ruby-comment cmt"># stride</span>
+423:                                         <span class="ruby-keyword kw">nil</span>                                                                                                        <span class="ruby-comment cmt">#-! unknown</span>
+424:                                 )
+425:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">BindTexture</span>( <span class="ruby-ivar">@texture</span>.<span class="ruby-identifier">mode</span>, <span class="ruby-ivar">@texture</span>.<span class="ruby-identifier">id</span> )
+426:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">BindBuffer</span>( <span class="ruby-ivar">@mode</span>, <span class="ruby-ivar">@bid</span> )
+427:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">EnableClientState</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERTEX_ARRAY</span> )
+428:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">DrawArrays</span>( <span class="ruby-ivar">@type</span>, <span class="ruby-value">0</span>, ( <span class="ruby-identifier">vertex_array</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">/</span> ( <span class="ruby-identifier">vertex_array</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">size</span> * ( <span class="ruby-value">3</span> <span class="ruby-operator">**</span> <span class="ruby-value">1</span> ) ) ).<span class="ruby-identifier">to_i</span> )
+429:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">end</span>()
+430:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -436,10 +440,10 @@ Return the  VertexBuffer ID
 					<div class="method-source-code"
 						id="buffer-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 435</span>
-435:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">buffer</span>()
-436:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@bid</span>
-437:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 433</span>
+433:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">buffer</span>()
+434:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@bid</span>
+435:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -472,10 +476,10 @@ Return the mode of the buffer
 					<div class="method-source-code"
 						id="mode-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 445</span>
-445:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mode</span>()
-446:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@mode</span>
-447:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 443</span>
+443:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mode</span>()
+444:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@mode</span>
+445:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -508,10 +512,10 @@ Return the type of the buffer
 					<div class="method-source-code"
 						id="type-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 440</span>
-440:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">type</span>()
-441:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@type</span>
-442:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 438</span>
+438:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">type</span>()
+439:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@type</span>
+440:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -548,15 +552,15 @@ Return the type of the buffer
 					<div class="method-source-code"
 						id="gl-type-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 450</span>
-450:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gl_type</span>( <span class="ruby-identifier">obj</span> )
-451:                         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">obj</span>
-452:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TRIANGLES</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value">3</span>
-453:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">QUADS</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value">4</span>
-454:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Float</span> <span class="ruby-keyword kw">then</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">FLOAT</span>
-455:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Int</span> <span class="ruby-keyword kw">then</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">INTEGER</span>
-456:                         <span class="ruby-keyword kw">end</span>
-457:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 448</span>
+448:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">gl_type</span>( <span class="ruby-identifier">obj</span> )
+449:                         <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">obj</span>
+450:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TRIANGLES</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value">3</span>
+451:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">QUADS</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value">4</span>
+452:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Float</span> <span class="ruby-keyword kw">then</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">FLOAT</span>
+453:                                 <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Int</span> <span class="ruby-keyword kw">then</span> <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">INTEGER</span>
+454:                         <span class="ruby-keyword kw">end</span>
+455:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

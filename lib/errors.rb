@@ -1,4 +1,6 @@
-module Qube
+# Custom errors and exceptions are listed here.  They are used for referencing internal errors unique to the Qube
+# system.  Third-party error and exception objects should be listed in this module.
+module Error
 	
 	# The required file or stream was not found or initialized
 	class MissingResourceException < Exception

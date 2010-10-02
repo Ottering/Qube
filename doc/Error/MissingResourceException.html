@@ -5,7 +5,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>Class: Qube::SGBaseObject</title>
+	<title>Class: Error::MissingResourceException</title>
 
 	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
 
@@ -38,8 +38,8 @@
 				<div class="section-body">
 					<ul>
 					
-						<li><a href="../lib/scenegraph_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/scenegraph.rb">lib/scenegraph.rb</a></li>
+						<li><a href="../lib/errors_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/errors.rb">lib/errors.rb</a></li>
 					
 					</ul>
 				</div>
@@ -55,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link">Object</p>
+				<p class="link">Exception</p>
 				
 			</div>
 			
@@ -70,20 +70,6 @@
 				<ul class="link-list">
 					
 					<li><a href="#method-c-new">::new</a></li>
-					
-					<li><a href="#method-i-bounded%3F">#bounded?</a></li>
-					
-					<li><a href="#method-i-bounds">#bounds</a></li>
-					
-					<li><a href="#method-i-bounds%3D">#bounds=</a></li>
-					
-					<li><a href="#method-i-id">#id</a></li>
-					
-					<li><a href="#method-i-name">#name</a></li>
-					
-					<li><a href="#method-i-visible%3D">#visible=</a></li>
-					
-					<li><a href="#method-i-visible%3F">#visible?</a></li>
 					
 				</ul>
 			</div>
@@ -341,12 +327,11 @@
 	</div>
 
 	<div id="documentation">
-		<h1 class="class">Qube::SGBaseObject</h1>
+		<h1 class="class">Error::MissingResourceException</h1>
 
 		<div id="description">
 			<p>
-Super class for all scenegraph objects.  Stores the bounds, visibility,
-name, and ID of the object.
+The required file or stream was not found or initialized
 </p>
 
 		</div>
@@ -369,7 +354,7 @@ name, and ID of the object.
 				<div class="method-heading">
 				
 					<span class="method-name">new</span><span
-						class="method-args">( name, bounds = nil, visible = true )</span>
+						class="method-args">( message )</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -383,271 +368,10 @@ name, and ID of the object.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-    <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 73</span>
-73:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">bounds</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">visible</span> = <span class="ruby-keyword kw">true</span> )
-74:                         <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
-75:                         <span class="ruby-ivar">@bounds</span> = <span class="ruby-identifier">bounds</span>
-76:                         <span class="ruby-ivar">@visible</span> = <span class="ruby-identifier">visible</span>
-77:                         <span class="ruby-ivar">@sgid</span> = <span class="ruby-constant">Scenegraph</span>.<span class="ruby-identifier">next_id</span>
-78:                 <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-		</div>
-	
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
-
-		
-			<div id="bounded--method" class="method-detail ">
-				<a name="method-i-bounded%3F"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">bounded?</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns true if this object has bounds (are not nil).
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="bounded--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 101</span>
-101:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bounded?</span>()
-102:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@bounds</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
-103:                 <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="bounds-method" class="method-detail ">
-				<a name="method-i-bounds"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">bounds</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns this object&#8217;s bounds, or nil if none were set.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="bounds-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 91</span>
-91:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bounds</span>()
-92:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@bounds</span>
-93:                 <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="bounds--method" class="method-detail ">
-				<a name="method-i-bounds%3D"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">bounds=</span><span
-						class="method-args">( val )</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Sets this object&#8217;s bounds.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="bounds--source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 96</span>
-96:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bounds=</span>( <span class="ruby-identifier">val</span> )
-97:                         <span class="ruby-ivar">@bounds</span> = <span class="ruby-identifier">val</span>
-98:                 <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="id-method" class="method-detail ">
-				<a name="method-i-id"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">id</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns this object&#8217;s ID in the scenegraph.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="id-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 111</span>
-111:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">id</span>()
-112:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@sgid</span>
-113:                 <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="name-method" class="method-detail ">
-				<a name="method-i-name"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">name</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns this object&#8217;s name.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="name-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 106</span>
-106:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">name</span>()
-107:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@name</span>
-108:                 <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="visible--method" class="method-detail ">
-				<a name="method-i-visible%3D"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">visible=</span><span
-						class="method-args">( flag )</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Sets the visibility flag.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="visible--source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 86</span>
-86:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visible=</span>( <span class="ruby-identifier">flag</span> )
-87:                         <span class="ruby-ivar">@visible</span> = <span class="ruby-identifier">flag</span>
-88:                 <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="visible--method" class="method-detail ">
-				<a name="method-i-visible%3F"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">visible?</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns true if this object is visible and should be rendered.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="visible--source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 81</span>
-81:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visible?</span>()
-82:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@visible</span>
-83:                 <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File lib/errors.rb, line 8</span>
+ 8:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">message</span> )
+ 9:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">message</span> )
+10:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

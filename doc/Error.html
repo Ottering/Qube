@@ -5,7 +5,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>Module: Resource</title>
+	<title>Module: Error</title>
 
 	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
 
@@ -38,11 +38,8 @@
 				<div class="section-body">
 					<ul>
 					
-						<li><a href="./lib/resource/resource_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/resource/resource.rb">lib/resource/resource.rb</a></li>
-					
-						<li><a href="./lib/resource/spheregrid_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/resource/spheregrid.rb">lib/resource/spheregrid.rb</a></li>
+						<li><a href="./lib/errors_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/errors.rb">lib/errors.rb</a></li>
 					
 					</ul>
 				</div>
@@ -62,11 +59,13 @@
 				<h3 class="section-header">Namespace</h3>
 				<ul class="link-list">
 					
-					<li><span class="type">MODULE</span> <a href="Resource/Constants.html">Resource::Constants</a></li>
+					<li><span class="type">CLASS</span> <a href="Error/LinkedLibraryException.html">Error::LinkedLibraryException</a></li>
 					
-					<li><span class="type">CLASS</span> <a href="Resource/SphereGrid.html">Resource::SphereGrid</a></li>
+					<li><span class="type">CLASS</span> <a href="Error/MissingResourceException.html">Error::MissingResourceException</a></li>
 					
-					<li><span class="type">CLASS</span> <a href="Resource/SphereNode.html">Resource::SphereNode</a></li>
+					<li><span class="type">CLASS</span> <a href="Error/NetworkTimeoutException.html">Error::NetworkTimeoutException</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="Error/RenderError.html">Error::RenderError</a></li>
 					
 				</ul>
 			</div>
@@ -74,30 +73,8 @@
 
 			<!-- Method Quickref -->
 			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-c-gen_spheregrid_node_id">::gen_spheregrid_node_id</a></li>
-					
-					<li><a href="#method-c-is_valid_node_type">::is_valid_node_type</a></li>
-					
-				</ul>
-			</div>
-			
 
 			<!-- Included Modules -->
-			
-			<div id="includes-section" class="section">
-				<h3 class="section-header">Included Modules</h3>
-				<ul class="link-list">
-				
-				
-					<li><span class="include">Constants</span></li>
-				
-				
-				</ul>
-			</div>
 			
 		</div>
 
@@ -349,11 +326,14 @@
 	</div>
 
 	<div id="documentation">
-		<h1 class="module">Resource</h1>
+		<h1 class="module">Error</h1>
 
 		<div id="description">
 			<p>
-require statements
+Custom errors and exceptions are listed here.  They are used for
+referencing internal errors unique to the <a href="Qube.html">Qube</a>
+system.  Third-party error and exception objects should be listed in this
+module.
 </p>
 
 		</div>
@@ -366,82 +346,6 @@ require statements
 
 		<!-- Methods -->
 		
-		<div id="public-class-method-details" class="method-section section">
-			<h3 class="section-header">Public Class Methods</h3>
-
-		
-			<div id="gen-spheregrid-node-id-method" class="method-detail ">
-				<a name="method-c-gen_spheregrid_node_id"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">gen_spheregrid_node_id</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="gen-spheregrid-node-id-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/resource/spheregrid.rb, line 40</span>
-40:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">gen_spheregrid_node_id</span>()
-41:                 <span class="ruby-identifier">id</span> = <span class="ruby-value str">''</span>
-42:                 <span class="ruby-constant">SGNID_LEN</span>.<span class="ruby-identifier">times</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;&lt;</span> ( <span class="ruby-identifier">rand</span>( <span class="ruby-value">27</span> ) <span class="ruby-operator">+</span> <span class="ruby-value">65</span> ).<span class="ruby-identifier">chr</span> }
-43:                 <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">id</span>
-44:         <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="is-valid-node-type-method" class="method-detail ">
-				<a name="method-c-is_valid_node_type"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">is_valid_node_type</span><span
-						class="method-args">( sphere_type, node_type )</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="is-valid-node-type-source">
-<pre>
-    <span class="ruby-comment cmt"># File lib/resource/spheregrid.rb, line 46</span>
-46:         <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">is_valid_node_type</span>( <span class="ruby-identifier">sphere_type</span>, <span class="ruby-identifier">node_type</span> )
-47:                 <span class="ruby-keyword kw">return</span> <span class="ruby-constant">SPHERE_TYPE_TABLE</span>[<span class="ruby-identifier">sphere_type</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node_type</span>
-48:         <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-		</div>
-	
 
 	</div>
 

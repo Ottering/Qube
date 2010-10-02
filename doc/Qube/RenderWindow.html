@@ -162,6 +162,8 @@
 				
 					<li><a href="../Qube/ContextDevice.html">Qube::ContextDevice</a></li>
 				
+					<li><a href="../Qube/CullRoutine.html">Qube::CullRoutine</a></li>
+				
 					<li><a href="../Qube/Dispatcher.html">Qube::Dispatcher</a></li>
 				
 					<li><a href="../Qube/Event.html">Qube::Event</a></li>
@@ -198,8 +200,6 @@
 				
 					<li><a href="../Qube/Light.html">Qube::Light</a></li>
 				
-					<li><a href="../Qube/LinkedLibraryException.html">Qube::LinkedLibraryException</a></li>
-				
 					<li><a href="../Qube/Localization.html">Qube::Localization</a></li>
 				
 					<li><a href="../Qube/Localize.html">Qube::Localize</a></li>
@@ -212,13 +212,9 @@
 				
 					<li><a href="../Qube/MenuItem.html">Qube::MenuItem</a></li>
 				
-					<li><a href="../Qube/MissingResourceException.html">Qube::MissingResourceException</a></li>
-				
 					<li><a href="../Qube/Model.html">Qube::Model</a></li>
 				
 					<li><a href="../Qube/Mouse.html">Qube::Mouse</a></li>
-				
-					<li><a href="../Qube/NetworkTimeoutException.html">Qube::NetworkTimeoutException</a></li>
 				
 					<li><a href="../Qube/Physics.html">Qube::Physics</a></li>
 				
@@ -241,8 +237,6 @@
 					<li><a href="../Qube/QTP/Response.html">Qube::QTP::Response</a></li>
 				
 					<li><a href="../Qube/Rectangle.html">Qube::Rectangle</a></li>
-				
-					<li><a href="../Qube/RenderError.html">Qube::RenderError</a></li>
 				
 					<li><a href="../Qube/RenderWindow.html">Qube::RenderWindow</a></li>
 				
@@ -328,6 +322,16 @@
 				
 					<li><a href="../Qube/XmlEntity.html">Qube::XmlEntity</a></li>
 				
+					<li><a href="../Error.html">Error</a></li>
+				
+					<li><a href="../Error/LinkedLibraryException.html">Error::LinkedLibraryException</a></li>
+				
+					<li><a href="../Error/MissingResourceException.html">Error::MissingResourceException</a></li>
+				
+					<li><a href="../Error/NetworkTimeoutException.html">Error::NetworkTimeoutException</a></li>
+				
+					<li><a href="../Error/RenderError.html">Error::RenderError</a></li>
+				
 					<li><a href="../Toolkit.html">Toolkit</a></li>
 				
 					<li><a href="../Toolkit/Checksum.html">Toolkit::Checksum</a></li>
@@ -398,35 +402,35 @@ system.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 179</span>
-179:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">title</span>, <span class="ruby-identifier">size</span> = <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Size</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">300</span>, <span class="ruby-value">300</span>), <span class="ruby-identifier">pos</span> = <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Point</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">mode</span> = <span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBA</span><span class="ruby-operator">|</span><span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">DEPTH</span><span class="ruby-operator">|</span><span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">DOUBLE</span> )
-180:                         <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">title</span>
-181:                         <span class="ruby-ivar">@width</span> = ( (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">size</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">width</span> ).<span class="ruby-identifier">to_i</span>
-182:                         <span class="ruby-ivar">@height</span> = ( (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">size</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">height</span> ).<span class="ruby-identifier">to_i</span>
-183: 
-184:                         <span class="ruby-comment cmt"># Set up GLUT data</span>
-185:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">Init</span>()
-186:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">InitDisplayMode</span>( <span class="ruby-identifier">mode</span> )
-187:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">InitWindowPosition</span>(
-188:                                         ( (<span class="ruby-identifier">pos</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">pos</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">x</span> ).<span class="ruby-identifier">to_i</span>,
-189:                                         ( (<span class="ruby-identifier">pos</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">pos</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">y</span> ).<span class="ruby-identifier">to_i</span>
-190:                                 )
-191:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">InitWindowSize</span>( <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span> )
-192: 
-193:                         <span class="ruby-comment cmt"># Create our Renderer</span>
-194:                         <span class="ruby-ivar">@renderer</span> = <span class="ruby-constant">Renderer</span>.<span class="ruby-identifier">new</span>( <span class="ruby-keyword kw">self</span> )
-195: 
-196:                         <span class="ruby-comment cmt"># Connect our event handlers</span>
-197:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">DisplayFunc</span>(            <span class="ruby-identifier">method</span>( <span class="ruby-value">:draw_scene</span> ).<span class="ruby-identifier">to_proc</span> )
-198:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">ReshapeFunc</span>(            <span class="ruby-identifier">method</span>( <span class="ruby-value">:resize</span> ).<span class="ruby-identifier">to_proc</span> )
-199:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">VisibilityFunc</span>( <span class="ruby-identifier">method</span>( <span class="ruby-value">:focus_event</span> ).<span class="ruby-identifier">to_proc</span> )
-200:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">KeyboardFunc</span>(           <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_press_event</span> ).<span class="ruby-identifier">to_proc</span> )
-201:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">KeyboardUpFunc</span>( <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_release_event</span> ).<span class="ruby-identifier">to_proc</span> )
-202:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SpecialFunc</span>(            <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_press_event</span> ).<span class="ruby-identifier">to_proc</span> )
-203:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SpecialUpFunc</span>(          <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_release_event</span> ).<span class="ruby-identifier">to_proc</span> )
-204:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">MouseFunc</span>(                      <span class="ruby-identifier">method</span>( <span class="ruby-value">:mouse_event</span> ).<span class="ruby-identifier">to_proc</span> )
-205:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">MotionFunc</span>(             <span class="ruby-identifier">method</span>( <span class="ruby-value">:mouse_motion_event</span> ).<span class="ruby-identifier">to_proc</span> )
-206:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 192</span>
+192:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">title</span>, <span class="ruby-identifier">size</span> = <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Size</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">300</span>, <span class="ruby-value">300</span>), <span class="ruby-identifier">pos</span> = <span class="ruby-constant">Qube</span><span class="ruby-operator">::</span><span class="ruby-constant">Point</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">mode</span> = <span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBA</span><span class="ruby-operator">|</span><span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">DEPTH</span><span class="ruby-operator">|</span><span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">DOUBLE</span> )
+193:                         <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">title</span>
+194:                         <span class="ruby-ivar">@width</span> = ( (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">size</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">width</span> ).<span class="ruby-identifier">to_i</span>
+195:                         <span class="ruby-ivar">@height</span> = ( (<span class="ruby-identifier">size</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">size</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">height</span> ).<span class="ruby-identifier">to_i</span>
+196: 
+197:                         <span class="ruby-comment cmt"># Set up GLUT data</span>
+198:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">Init</span>()
+199:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">InitDisplayMode</span>( <span class="ruby-identifier">mode</span> )
+200:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">InitWindowPosition</span>(
+201:                                         ( (<span class="ruby-identifier">pos</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">pos</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">x</span> ).<span class="ruby-identifier">to_i</span>,
+202:                                         ( (<span class="ruby-identifier">pos</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">pos</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">y</span> ).<span class="ruby-identifier">to_i</span>
+203:                                 )
+204:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">InitWindowSize</span>( <span class="ruby-ivar">@width</span>, <span class="ruby-ivar">@height</span> )
+205: 
+206:                         <span class="ruby-comment cmt"># Create our Renderer</span>
+207:                         <span class="ruby-ivar">@renderer</span> = <span class="ruby-constant">Renderer</span>.<span class="ruby-identifier">new</span>( <span class="ruby-keyword kw">self</span> )
+208: 
+209:                         <span class="ruby-comment cmt"># Connect our event handlers</span>
+210:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">DisplayFunc</span>(            <span class="ruby-identifier">method</span>( <span class="ruby-value">:draw_scene</span> ).<span class="ruby-identifier">to_proc</span> )
+211:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">ReshapeFunc</span>(            <span class="ruby-identifier">method</span>( <span class="ruby-value">:resize</span> ).<span class="ruby-identifier">to_proc</span> )
+212:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">VisibilityFunc</span>( <span class="ruby-identifier">method</span>( <span class="ruby-value">:focus_event</span> ).<span class="ruby-identifier">to_proc</span> )
+213:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">KeyboardFunc</span>(           <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_press_event</span> ).<span class="ruby-identifier">to_proc</span> )
+214:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">KeyboardUpFunc</span>( <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_release_event</span> ).<span class="ruby-identifier">to_proc</span> )
+215:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SpecialFunc</span>(            <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_press_event</span> ).<span class="ruby-identifier">to_proc</span> )
+216:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SpecialUpFunc</span>(          <span class="ruby-identifier">method</span>( <span class="ruby-value">:key_release_event</span> ).<span class="ruby-identifier">to_proc</span> )
+217:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">MouseFunc</span>(                      <span class="ruby-identifier">method</span>( <span class="ruby-value">:mouse_event</span> ).<span class="ruby-identifier">to_proc</span> )
+218:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">MotionFunc</span>(             <span class="ruby-identifier">method</span>( <span class="ruby-value">:mouse_motion_event</span> ).<span class="ruby-identifier">to_proc</span> )
+219:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -465,10 +469,10 @@ Returns the aspect ratio of the window
 					<div class="method-source-code"
 						id="aspect-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 232</span>
-232:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">aspect</span>()
-233:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">height</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">width</span>.<span class="ruby-identifier">to_f</span>
-234:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 245</span>
+245:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">aspect</span>()
+246:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">height</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">width</span>.<span class="ruby-identifier">to_f</span>
+247:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -563,10 +567,10 @@ Creates the GLUT window
 					<div class="method-source-code"
 						id="create-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 209</span>
-209:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>()
-210:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">CreateWindow</span>( [<span class="ruby-ivar">@title</span>] )
-211:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 222</span>
+222:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>()
+223:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">CreateWindow</span>( [<span class="ruby-ivar">@title</span>] )
+224:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -599,10 +603,10 @@ Returns the height of the window in pixels
 					<div class="method-source-code"
 						id="height-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 227</span>
-227:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height</span>()
-228:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@height</span>
-229:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 240</span>
+240:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height</span>()
+241:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@height</span>
+242:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -635,11 +639,11 @@ Begins the GLUT main loop
 					<div class="method-source-code"
 						id="mainloop-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 214</span>
-214:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mainloop</span>()
-215:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">initialized?</span>
-216:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">MainLoop</span>()
-217:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 227</span>
+227:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mainloop</span>()
+228:                         <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">initialized?</span>
+229:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">MainLoop</span>()
+230:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -705,10 +709,10 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="width-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 222</span>
-222:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width</span>()
-223:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@width</span>
-224:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 235</span>
+235:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width</span>()
+236:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@width</span>
+237:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -745,16 +749,16 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="draw-scene-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 238</span>
-238:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw_scene</span>()
-239:                         
-240:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Clear</span>( 
-241:                                 <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">COLOR_BUFFER_BIT</span> <span class="ruby-operator">|</span> 
-242:                                 <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">DEPTH_BUFFER_BIT</span> 
-243:                         )                                            <span class="ruby-comment cmt"># Clear the frame buffer</span>
-244:                         <span class="ruby-ivar">@renderer</span>.<span class="ruby-identifier">draw</span>                       <span class="ruby-comment cmt"># Call the renderer draw routine</span>
-245:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SwapBuffers</span>()           <span class="ruby-comment cmt"># Flush and post to the window</span>
-246:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 251</span>
+251:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw_scene</span>()
+252:                         
+253:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Clear</span>( 
+254:                                 <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">COLOR_BUFFER_BIT</span> <span class="ruby-operator">|</span> 
+255:                                 <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">DEPTH_BUFFER_BIT</span> 
+256:                         )                                            <span class="ruby-comment cmt"># Clear the frame buffer</span>
+257:                         <span class="ruby-ivar">@renderer</span>.<span class="ruby-identifier">draw</span>                       <span class="ruby-comment cmt"># Call the renderer draw routine</span>
+258:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SwapBuffers</span>()           <span class="ruby-comment cmt"># Flush and post to the window</span>
+259:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -785,10 +789,10 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="focus-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 266</span>
-266:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">focus_event</span>( <span class="ruby-identifier">visible</span> )
-267:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">IdleFunc</span>( (<span class="ruby-identifier">visible</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">VISIBLE</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">method</span>( <span class="ruby-value">:idle</span> ).<span class="ruby-identifier">to_proc</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span> )
-268:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 279</span>
+279:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">focus_event</span>( <span class="ruby-identifier">visible</span> )
+280:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">IdleFunc</span>( (<span class="ruby-identifier">visible</span> <span class="ruby-operator">==</span> <span class="ruby-constant">GLUT</span><span class="ruby-operator">::</span><span class="ruby-constant">VISIBLE</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">method</span>( <span class="ruby-value">:idle</span> ).<span class="ruby-identifier">to_proc</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span> )
+281:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -819,11 +823,11 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="idle-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 248</span>
-248:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">idle</span>()
-249:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Clear</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">COLOR_BUFFER_BIT</span> )
-250:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SwapBuffers</span>()
-251:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 261</span>
+261:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">idle</span>()
+262:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Clear</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">COLOR_BUFFER_BIT</span> )
+263:                         <span class="ruby-constant">GLUT</span>.<span class="ruby-constant">SwapBuffers</span>()
+264:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -854,10 +858,10 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="key-press-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 270</span>
-270:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">key_press_event</span>( <span class="ruby-identifier">key</span>, <span class="ruby-identifier">mouse_x</span>, <span class="ruby-identifier">mouse_y</span> )
-271:                         <span class="ruby-comment cmt"># ex:  @keymap[key].call( mouse_x, mouse_y ) &lt;- keymap stores KEY=&gt;Method pair from Keyboard instance</span>
-272:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 283</span>
+283:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">key_press_event</span>( <span class="ruby-identifier">key</span>, <span class="ruby-identifier">mouse_x</span>, <span class="ruby-identifier">mouse_y</span> )
+284:                         <span class="ruby-comment cmt"># ex:  @keymap[key].call( mouse_x, mouse_y ) &lt;- keymap stores KEY=&gt;Method pair from Keyboard instance</span>
+285:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -888,10 +892,10 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="key-release-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 274</span>
-274:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">key_release_event</span>( <span class="ruby-identifier">key</span>, <span class="ruby-identifier">mouse_x</span>, <span class="ruby-identifier">mouse_y</span> )
-275:                         <span class="ruby-comment cmt">#</span>
-276:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 287</span>
+287:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">key_release_event</span>( <span class="ruby-identifier">key</span>, <span class="ruby-identifier">mouse_x</span>, <span class="ruby-identifier">mouse_y</span> )
+288:                         <span class="ruby-comment cmt">#</span>
+289:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -922,10 +926,10 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="mouse-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 278</span>
-278:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mouse_event</span>( <span class="ruby-identifier">button</span>, <span class="ruby-identifier">state</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> )
-279:                         <span class="ruby-comment cmt">#</span>
-280:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 291</span>
+291:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mouse_event</span>( <span class="ruby-identifier">button</span>, <span class="ruby-identifier">state</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> )
+292:                         <span class="ruby-comment cmt">#</span>
+293:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -956,10 +960,10 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="mouse-motion-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 282</span>
-282:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mouse_motion_event</span>( <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> )
-283:                         <span class="ruby-comment cmt">#</span>
-284:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 295</span>
+295:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mouse_motion_event</span>( <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span> )
+296:                         <span class="ruby-comment cmt">#</span>
+297:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -990,19 +994,19 @@ Returns the width of the window in pixels
 					<div class="method-source-code"
 						id="resize-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/render.rb, line 253</span>
-253:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">resize</span>( <span class="ruby-identifier">w</span>, <span class="ruby-identifier">h</span> )
-254:                         <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">w</span>
-255:                         <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">h</span>
-256:                         <span class="ruby-identifier">ratio</span> = <span class="ruby-ivar">@height</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@width</span>.<span class="ruby-identifier">to_f</span>
-257: 
-258:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Viewport</span>( <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span> )
-259:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">MatrixMode</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">PROJECTION</span> )
-260:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">LoadIdentity</span>()
-261:                         <span class="ruby-constant">GLU</span>.<span class="ruby-constant">Perspective</span>( <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">angle</span> * ( <span class="ruby-identifier">ratio</span> <span class="ruby-operator">**</span> <span class="ruby-value">1</span> ), <span class="ruby-identifier">ratio</span>, <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">near</span>, <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">far</span> )
-262:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">MatrixMode</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">MODELVIEW</span> )
-263:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">LoadIdentity</span>()
-264:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/render.rb, line 266</span>
+266:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">resize</span>( <span class="ruby-identifier">w</span>, <span class="ruby-identifier">h</span> )
+267:                         <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">w</span>
+268:                         <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">h</span>
+269:                         <span class="ruby-identifier">ratio</span> = <span class="ruby-ivar">@height</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@width</span>.<span class="ruby-identifier">to_f</span>
+270: 
+271:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">Viewport</span>( <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span> )
+272:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">MatrixMode</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">PROJECTION</span> )
+273:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">LoadIdentity</span>()
+274:                         <span class="ruby-constant">GLU</span>.<span class="ruby-constant">Perspective</span>( <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">angle</span> * ( <span class="ruby-identifier">ratio</span> <span class="ruby-operator">**</span> <span class="ruby-value">1</span> ), <span class="ruby-identifier">ratio</span>, <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">near</span>, <span class="ruby-identifier">camera</span>.<span class="ruby-identifier">frustum</span>.<span class="ruby-identifier">far</span> )
+275:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">MatrixMode</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">MODELVIEW</span> )
+276:                         <span class="ruby-constant">GL</span>.<span class="ruby-constant">LoadIdentity</span>()
+277:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

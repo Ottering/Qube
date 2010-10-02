@@ -7,18 +7,26 @@ QENV = Hash.new
 # Environment variables for the engine are stored in the globalized constant QENV, a Hash object.
 # The Toolkit module is only for developmental purposes, while Resources contains 3rd-party code.
 module Qube
-	# Window Vars
+	# Title of window
 	WV_TITLE		= 'wv_title'
+	# Icon of window
 	WV_ICON			= 'wv_icon'
+	# Size of window (pixels)
 	WV_SIZE			= 'wv_size'
+	# Position of window
 	WV_POS			= 'wv_pos'
+	# If true, make fullscreen
 	WV_FULLSCREEN	= 'wv_fullscreen'
+	# If true, maximize
 	WV_MAXIMIZE		= 'wv_maximize'
+	# If true, center on screen
 	WV_CENTER		= 'wv_center'
+	# Bits for GLUT options
 	WV_GLUT			= 'wv_glut'
 
-	# System Vars
+	# Network host
 	SV_HOST			= 'sv_host'
+	# System language (use ENV['LANG'] for local default)
 	SV_LANG			= 'sv_lang'
 
 	# Load a serialized (.rbo) object
