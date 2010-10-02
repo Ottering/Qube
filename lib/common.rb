@@ -39,8 +39,6 @@ module Qube
 		alias :to_str :code
 	end
 
-	### Coordinates ####################################################################################################
-
 	# N-Dimensional Coordinate.  Supports 1, 2, or 3 axis.
 	class Point
 
@@ -128,8 +126,6 @@ module Qube
 			return (other.is_a? Point) ? [ other.x, other.y, other.z ] : other
 		end
 	end
-
-	### Element Bounding ###############################################################################################
 
 	# Simple rectangular bounding region in the X and Y axis (2D).
 	class Size
@@ -252,12 +248,10 @@ module Qube
 		end
 	end
 
-	### Colors #########################################################################################################
-
 	# Variable-channel color object.  Supports up to 4 color channels (RGBA)
 	class Color
 
-		CHANNEL_VALS = (0..1.0)
+		CHANNEL_VALS = (0 .. 1.0)
 
 		# Initializes a new Color.  Arguments may be ignored, a list of values, or another Color
 		def initialize( *args )

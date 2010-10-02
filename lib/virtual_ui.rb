@@ -3,38 +3,117 @@ require 'cairo'
 
 module Qube
 
+	# Stores the currently loaded style information, active style, and various environment properties.
 	module VirtualUI
-		#
+		
+		@styles = Hash.new
+		@current = ''
+		@env = Hash.new
+		
+		# Returns the value of the passed environment variable
+		def self.[]( var )
+			return @env[var]
+		end
+		
+		# Sets the environment variable
+		def self.[]=( var, val )
+			@env[var] = val
+		end
+		
+		# Load and attach a new style
+		def self.load( style )
+		#	return false if include? style
+			# TODO:  create a new style and attach it
+		end
+		
+		# Return the current table of loaded styles
+		def self.styles()
+			return @styles
+		end
+		
+		# Returns true if the style has been loaded
+		def self.include?( style )
+			return @styles.include? style
+		end
+		
+		# Deletes and returns the style
+		def self.delete( style )
+			return @styles.delete( style )
+		end
+		
+		# Returns the currently active style
+		def self.style()
+			return (@current.is_a? String) ? @style[@current] : @current
+		end
+		
+		# Sets the current style
+		def self.style=( style )
+			@current = style
+		end
 	end
 	
-	module Style
-		#
+	# Defines a style used by the Virtual UI for drawing components.  Each element has a Property (Style::Property)
+	# associated with it, which is a Hash of key->value pairs.
+	class Style
+	
+		# Property class for holding element data
+		class Property < Hash
+			#
+		end
+		
+		def initialize( name )
+			@name = name
+			@elements = Hash.new
+		end
+		
+		def name()
+			return @name
+		end
+		
+		def []( element )
+			return @elements[element]
+		end
+		alias :get :[]
+		
+		def []=( element, properties )
+			@elements[element] = properties
+		end
+		alias :set :[]=
+		
+		def load( file )
+			# TODO:  Interpret metacity-like file
+		end
 	end
 
+	# Basic event object; used for reporting events
 	class Event
 
-		def initialize( source, message, description = '')
+		def initialize( source, message = nil, description = '')
 			@source = source
 			@message = message
 			@description = description
 		end
 
+		# Returns the source of this event
 		def source()
 			return @source
 		end
 		alias :get_source :source
 
+		# Return this event's payload or message data
 		def message()
 			return @message
 		end
 		alias :get_message :message
 
+		# Returns this event's description
 		def description()
 			return @description
 		end
 		alias :get_description :description
 	end
 
+	# An event that is raised when a component or Frame gains focus.
 	class FocusEvent < Event
 
 		def initialize( source, has_focus )
@@ -44,6 +123,7 @@ module Qube
 		alias :has_focus? :message
 	end
 
+	# An event that is raised when a component is attached to, or detached from, a container.
 	class AttachEvent < Event
 
 		ATTACHED = true
@@ -56,6 +136,7 @@ module Qube
 		alias :attached? :message
 	end
 
+	# An event that is raised when a component is resized.
 	class ResizeEvent < Event
 
 		def initialize( source, size )
@@ -73,6 +154,7 @@ module Qube
 		end
 	end
 
+	# An event that is raised when the layout or placement of a component chances.
 	class LayoutEvent < ResizeEvent
 
 		def initialize( source, bounds )
@@ -90,6 +172,7 @@ module Qube
 		end
 	end
 
+	# State mixin that denotes a component can be pressed.
 	module Pressable
 
 		def on_press( evt )
@@ -101,6 +184,7 @@ module Qube
 		end
 	end
 
+	# State mixin that denotes a component can be selected or deselected.
 	module Selectable
 
 		@state = false
@@ -124,6 +208,7 @@ module Qube
 		alias :set_selected :selected=
 	end
 
+	# State mixin that denotes a component's state changes when hovered over.
 	module Hover
 
 		def on_hover( evt )
@@ -143,6 +228,7 @@ module Qube
 		end
 	end
 
+	# State mixin that denotes a component can be enabled or disabled.
 	module Toggle
 		
 		def enable( flag )
@@ -155,6 +241,7 @@ module Qube
 		alias :is_enabled? :enabled?
 	end
 
+	# Allows a component to have a border.
 	module Border
 
 		# Border Styles
@@ -201,6 +288,7 @@ module Qube
 		end
 	end
 
+	# Allows a component to have an icon, which can be aligned.
 	module IconComponent
 	
 		LEFT	= 'left'
@@ -229,6 +317,7 @@ module Qube
 		end
 	end
 
+	# Allows a component to contain text or display text.  Editing and display options are provided.
 	module TextComponent
 		
 		WRAP_BY_WORD	=  1
@@ -345,6 +434,7 @@ module Qube
 		end
 	end
 
+	# Low-level component.  Stores information necessary for layout, sizing, and placement.
 	class UIComponent
 		include Qube::Tree::Leaf
 		
@@ -403,6 +493,7 @@ module Qube
 		alias :set_enabled :enabled=
 	end
 
+	# Low-level container.  Holds child components within its bounds.
 	class Container < UIComponent
 		include Qube::Tree::Branch
 
@@ -412,11 +503,13 @@ module Qube
 		end
 	end
 
+	# Expandable separator.  Orientations may be OR'd together (Ex:  HORIZONTAL | SPAN).  Span-types will fill the area
+	# around them within the layout, dependent upon their main orientaton (HORIZONTAL or VERTICAL).
 	class Separator < UIComponent
 		
-		HORIZONTAL 		= 'h'
-		VERTICAL 		= 'v'
-		SPAN 			= 'F'
+		HORIZONTAL 		= 0b00
+		VERTICAL 		= 0b01
+		SPAN 			= 0b10
 
 		def initialize( parent, orientation )
 			super( parent, 'separator')
@@ -429,20 +522,29 @@ module Qube
 		alias :get_orientation :orientation
 	end
 
+	# Simple text display field.
 	class Label < UIComponent
 		include IconComponent, TextComponent
+		
+		LEFT 	= 'left'
+		RIGHT 	= 'right'
+		CENTER	= 'center'
 
-		def initialize( parent, name, text, icon = nil )
+		def initialize( parent, name, text, align = LEFT, icon = nil )
 			super( parent, name )
 			self.icon = icon
 			self.text = text
 		end
 	end
 
+	# Simple progress indicator bar.
 	class ProgressBar < UIComponent
 		include TextComponent
+		
+		HORIZONTAL		= 'h'
+		VERTICAL		= 'v'
 
-		def initialize( parent, name, min = 0.0, max = 1.0, show_progress = false )
+		def initialize( parent, name, min = 0.0, max = 1.0, show_progress = false, orientation = HORIZONTAL )
 			super( parent, name )
 			@min = min
 			@max = max
@@ -487,6 +589,7 @@ module Qube
 		end
 	end
 
+	# Simple button.  Can contain text and an icon.
 	class Button < UIComponent
 		include Pressable, TextComponent
 
@@ -497,6 +600,7 @@ module Qube
 		end
 	end
 
+	# Simple checkbox.  Can contain text and an icon.
 	class Checkbox < UIComponent
 		include Selectable, TextComponent
 
@@ -508,6 +612,7 @@ module Qube
 		end
 	end
 
+	# Simple text area.  Defaults to multi-line display and editing.
 	class TextArea < UIComponent
 		include TextComponent
 
@@ -519,6 +624,28 @@ module Qube
 		end
 	end
 	
+	# Simple scrollable viewport.
+	class ScrollPane < Container
+	
+		HORIZONTAL	= 0b01
+		VERTICAL	= 0b10
+		BOTH		= HORIZONTAL | VERTICAL
+		
+		def initialize( parent, name, bars = BOTH )
+			super( parent, name )
+			@bars = bars
+		end
+		
+		def bars()
+			return @bars
+		end
+		
+		def bars=( bars )
+			@bars = bars
+		end
+	end
+	
+	# Specifies a font which can be rendered by Cairo.
 	class Font
 		
 		def initialize( name, size, source, type )
@@ -555,6 +682,7 @@ module Qube
 		end
 	end
 
+	# Simple menu bar.  Contains menus for interacting with the Frame.
 	class MenuBar < Container
 
 		def initialize( parent, name )
@@ -562,6 +690,7 @@ module Qube
 		end
 	end
 
+	# Simple menu.  Contains selectable options.
 	class Menu < Container
 		include TextComponent
 
@@ -576,6 +705,7 @@ module Qube
 		end
 	end
 
+	# Simple menu item.  Allows for text, an icon, and a mnemonic (hotkey)
 	class MenuItem < UIComponent
 		include Pressable, IconComponent, TextComponent
 
@@ -591,6 +721,7 @@ module Qube
 		end
 	end
 
+	# Simple Frame (window).
 	class Frame < Container
 	
 		# Window Buttons
@@ -602,14 +733,13 @@ module Qube
 		DEFAULT			= CLOSE | SHADE | ICONIFY
 		ALL				= DEFAULT | RESIZE | RESTORE
 
-		def initialize( parent, title, pos = Qube::Point.new(0, 0), size = Qube::Size.new(300, 300), buttons = CLOSE, icon = nil )
+		def initialize( parent, title, buttons = CLOSE, icon = nil )
 			super( parent, title )
-			@size = size
-			@location = pos
 			# TODO:  Frame setup
 		end
 	end
 
+	# Simple titlebar.  Displays name of the Frame, a frame icon, and the window buttons.
 	class TitleBar < Container
 		include IconComponent, TextComponent
 
