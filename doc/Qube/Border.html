@@ -309,8 +309,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -346,55 +344,71 @@ Allows a component to have a border.
 				<dt><a name="NONE">NONE</a></dt>
 				
 				<dd class="description"><p>
-<a href="Border.html">Border</a> Styles
+Turns off the border property if added
 </p></dd>
 				
 			
 				<dt><a name="SOLID">SOLID</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Solid, monochrome border    
+</p></dd>
 				
 			
 				<dt><a name="DASHED">DASHED</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Dashed, monochrome border           
+</p></dd>
 				
 			
 				<dt><a name="INSET">INSET</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Inset beveled edge
+</p></dd>
 				
 			
 				<dt><a name="RAISED">RAISED</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Raised beveled edge
+</p></dd>
 				
 			
 				<dt><a name="HOVER">HOVER</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Drop-shadow
+</p></dd>
 				
 			
 				<dt><a name="TITLED">TITLED</a></dt>
 				
 				<dd class="description"><p>
-Options (ORd)
+Has a title
 </p></dd>
 				
 			
 				<dt><a name="CAPPED">CAPPED</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Capped (square) corners
+</p></dd>
 				
 			
 				<dt><a name="MITERED">MITERED</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Angled (mitered) corners
+</p></dd>
 				
 			
 				<dt><a name="ROUNDED">ROUNDED</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Rounded corners
+</p></dd>
 				
 			
 			</dl>
@@ -423,17 +437,19 @@ Options (ORd)
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the style bits for this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="style-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 266</span>
-266:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">style</span>()
-267:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@border_style</span>
-268:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 293</span>
+293:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">style</span>()
+294:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@border_style</span>
+295:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -457,17 +473,19 @@ Options (ORd)
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the style bits for this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="style--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 270</span>
-270:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">style=</span>( <span class="ruby-identifier">s</span> )
-271:                         <span class="ruby-ivar">@border_style</span> = <span class="ruby-identifier">s</span>
-272:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 298</span>
+298:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">style=</span>( <span class="ruby-identifier">s</span> )
+299:                         <span class="ruby-ivar">@border_style</span> = <span class="ruby-identifier">s</span>
+300:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -491,17 +509,19 @@ Options (ORd)
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the thickness of the border, in pixels
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="thickness-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 274</span>
-274:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">thickness</span>()
-275:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@thickness</span>
-276:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 303</span>
+303:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">thickness</span>()
+304:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@thickness</span>
+305:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -525,17 +545,19 @@ Options (ORd)
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the thickness of the border, in pixels
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="thickness--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 278</span>
-278:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">thickness=</span>( <span class="ruby-identifier">pix</span> )
-279:                         <span class="ruby-ivar">@thickness</span> = <span class="ruby-identifier">pix</span>
-280:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 308</span>
+308:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">thickness=</span>( <span class="ruby-identifier">pix</span> )
+309:                         <span class="ruby-ivar">@thickness</span> = <span class="ruby-identifier">pix</span>
+310:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -559,17 +581,19 @@ Options (ORd)
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the title of the border, or an empty string if one is not present
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="title-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 282</span>
-282:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">title</span>()
-283:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@title</span>
-284:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 313</span>
+313:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">title</span>()
+314:                         <span class="ruby-keyword kw">return</span> (<span class="ruby-keyword kw">defined?</span> <span class="ruby-ivar">@title</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@title</span> <span class="ruby-operator">:</span> <span class="ruby-value str">''</span>
+315:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -593,17 +617,19 @@ Options (ORd)
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the title of the border
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="title--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 286</span>
-286:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">title=</span>( <span class="ruby-identifier">txt</span> )
-287:                         <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">txt</span>
-288:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 318</span>
+318:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">title=</span>( <span class="ruby-identifier">txt</span> )
+319:                         <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">txt</span>
+320:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

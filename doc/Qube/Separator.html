@@ -310,8 +310,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -351,17 +349,23 @@ href="Separator.html#VERTICAL">VERTICAL</a>).
 			
 				<dt><a name="HORIZONTAL">HORIZONTAL</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Span is horizontal
+</p></dd>
 				
 			
 				<dt><a name="VERTICAL">VERTICAL</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Span is vertical
+</p></dd>
 				
 			
 				<dt><a name="SPAN">SPAN</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Dynamically fill
+</p></dd>
 				
 			
 			</dl>
@@ -397,11 +401,11 @@ href="Separator.html#VERTICAL">VERTICAL</a>).
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 514</span>
-514:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">orientation</span> )
-515:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-value str">'separator'</span>)
-516:                         <span class="ruby-ivar">@orientation</span> = <span class="ruby-identifier">orientation</span>
-517:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 588</span>
+588:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">orientation</span> )
+589:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-value str">'separator'</span>)
+590:                         <span class="ruby-ivar">@orientation</span> = <span class="ruby-identifier">orientation</span>
+591:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -460,17 +464,19 @@ href="Separator.html#VERTICAL">VERTICAL</a>).
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the orientation
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="orientation-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 519</span>
-519:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">orientation</span>()
-520:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@orientation</span>
-521:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 594</span>
+594:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">orientation</span>()
+595:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@orientation</span>
+596:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

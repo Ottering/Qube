@@ -301,8 +301,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -354,17 +352,19 @@ State mixin that denotes a component can be pressed.
 
 				<div class="method-description">
 					
-					
+					<p>
+Passes the event to the &#8220;press&#8221; function
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="on-press-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 178</span>
-178:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_press</span>( <span class="ruby-identifier">evt</span> )
-179:                         <span class="ruby-ivar">@press_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
-180:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 185</span>
+185:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_press</span>( <span class="ruby-identifier">evt</span> )
+186:                         <span class="ruby-ivar">@press_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
+187:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -388,17 +388,19 @@ State mixin that denotes a component can be pressed.
 
 				<div class="method-description">
 					
-					
+					<p>
+Registers the function for the &#8220;press&#8221; event
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="register-press-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 182</span>
-182:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_press_event</span>( <span class="ruby-identifier">func</span> )
-183:                         <span class="ruby-ivar">@press_func</span> = <span class="ruby-identifier">func</span>
-184:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 190</span>
+190:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_press_event</span>( <span class="ruby-identifier">func</span> )
+191:                         <span class="ruby-ivar">@press_func</span> = <span class="ruby-identifier">func</span>
+192:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

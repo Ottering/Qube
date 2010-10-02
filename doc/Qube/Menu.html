@@ -319,8 +319,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -379,12 +377,12 @@ Simple menu.  Contains selectable options.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 697</span>
-697:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">alt_key</span> = <span class="ruby-keyword kw">nil</span> )
-698:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
-699:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>
-700:                         <span class="ruby-ivar">@alt_key</span> = <span class="ruby-identifier">alt_key</span>
-701:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 803</span>
+803:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">alt_key</span> = <span class="ruby-keyword kw">nil</span> )
+804:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
+805:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>
+806:                         <span class="ruby-ivar">@alt_key</span> = <span class="ruby-identifier">alt_key</span>
+807:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -414,17 +412,19 @@ Simple menu.  Contains selectable options.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the alt key for selecting this menu
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="alt-key-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 703</span>
-703:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">alt_key</span>()
-704:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@alt_key</span>
-705:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 810</span>
+810:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">alt_key</span>()
+811:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@alt_key</span>
+812:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

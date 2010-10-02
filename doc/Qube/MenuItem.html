@@ -327,8 +327,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -387,13 +385,13 @@ Simple menu item.  Allows for text, an icon, and a mnemonic (hotkey)
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 712</span>
-712:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">icon</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">shortcut</span> = <span class="ruby-keyword kw">nil</span> )
-713:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
-714:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">icon</span> = <span class="ruby-identifier">icon</span>
-715:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>
-716:                         <span class="ruby-ivar">@shortcut</span> = <span class="ruby-identifier">shortcut</span>
-717:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 819</span>
+819:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">text</span>, <span class="ruby-identifier">icon</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">shortcut</span> = <span class="ruby-keyword kw">nil</span> )
+820:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
+821:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">icon</span> = <span class="ruby-identifier">icon</span>
+822:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>
+823:                         <span class="ruby-ivar">@shortcut</span> = <span class="ruby-identifier">shortcut</span>
+824:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -423,17 +421,19 @@ Simple menu item.  Allows for text, an icon, and a mnemonic (hotkey)
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the hotkey (shortcut) 
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="shortcut-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 719</span>
-719:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shortcut</span>()
-720:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@shortcut</span>
-721:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 827</span>
+827:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shortcut</span>()
+828:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@shortcut</span>
+829:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

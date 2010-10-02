@@ -309,8 +309,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -391,17 +389,19 @@ State mixin that denotes a component can be selected or deselected.
 
 				<div class="method-description">
 					
-					
+					<p>
+Passes the event to the &#8220;select&#8221; function
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="on-selection-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 192</span>
-192:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_selection</span>( <span class="ruby-identifier">evt</span> )
-193:                         <span class="ruby-ivar">@select_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
-194:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 201</span>
+201:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_selection</span>( <span class="ruby-identifier">evt</span> )
+202:                         <span class="ruby-ivar">@select_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
+203:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -425,17 +425,19 @@ State mixin that denotes a component can be selected or deselected.
 
 				<div class="method-description">
 					
-					
+					<p>
+Registers the function for the &#8220;select&#8221; event
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="register-select-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 196</span>
-196:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_select_event</span>( <span class="ruby-identifier">func</span> )
-197:                         <span class="ruby-ivar">@select_func</span> = <span class="ruby-identifier">func</span>
-198:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 206</span>
+206:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_select_event</span>( <span class="ruby-identifier">func</span> )
+207:                         <span class="ruby-ivar">@select_func</span> = <span class="ruby-identifier">func</span>
+208:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -459,17 +461,19 @@ State mixin that denotes a component can be selected or deselected.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the selection state of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="selected--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 205</span>
-205:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected=</span>( <span class="ruby-identifier">flag</span> )
-206:                         <span class="ruby-ivar">@state</span> = <span class="ruby-identifier">flag</span>
-207:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 217</span>
+217:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected=</span>( <span class="ruby-identifier">flag</span> )
+218:                         <span class="ruby-ivar">@state</span> = <span class="ruby-identifier">flag</span>
+219:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -497,17 +501,19 @@ State mixin that denotes a component can be selected or deselected.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns true if this component has been selected
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="selected--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 200</span>
-200:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected?</span>()
-201:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@state</span>
-202:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 211</span>
+211:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected?</span>()
+212:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@state</span>
+213:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

@@ -310,8 +310,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -346,17 +344,23 @@ Simple scrollable viewport.
 			
 				<dt><a name="HORIZONTAL">HORIZONTAL</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Use horizontal scroll bar
+</p></dd>
 				
 			
 				<dt><a name="VERTICAL">VERTICAL</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Use vertical scroll bar
+</p></dd>
 				
 			
 				<dt><a name="BOTH">BOTH</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Use both scroll bars
+</p></dd>
 				
 			
 			</dl>
@@ -392,11 +396,11 @@ Simple scrollable viewport.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 634</span>
-634:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">bars</span> = <span class="ruby-constant">BOTH</span> )
-635:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
-636:                         <span class="ruby-ivar">@bars</span> = <span class="ruby-identifier">bars</span>
-637:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 733</span>
+733:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">bars</span> = <span class="ruby-constant">BOTH</span> )
+734:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
+735:                         <span class="ruby-ivar">@bars</span> = <span class="ruby-identifier">bars</span>
+736:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -426,17 +430,19 @@ Simple scrollable viewport.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the bar setting
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="bars-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 639</span>
-639:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bars</span>()
-640:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@bars</span>
-641:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 739</span>
+739:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bars</span>()
+740:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@bars</span>
+741:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -460,17 +466,19 @@ Simple scrollable viewport.
 
 				<div class="method-description">
 					
-					
+					<p>
+Set the bar setting
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="bars--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 643</span>
-643:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bars=</span>( <span class="ruby-identifier">bars</span> )
-644:                         <span class="ruby-ivar">@bars</span> = <span class="ruby-identifier">bars</span>
-645:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 744</span>
+744:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bars=</span>( <span class="ruby-identifier">bars</span> )
+745:                         <span class="ruby-ivar">@bars</span> = <span class="ruby-identifier">bars</span>
+746:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

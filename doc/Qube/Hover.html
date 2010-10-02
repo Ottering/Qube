@@ -305,8 +305,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -359,17 +357,19 @@ over.
 
 				<div class="method-description">
 					
-					
+					<p>
+Passes the event to the &#8220;exit&#8221; function
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="on-exit-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 222</span>
-222:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_exit</span>( <span class="ruby-identifier">evt</span> )
-223:                         <span class="ruby-ivar">@uhover_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
-224:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 237</span>
+237:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_exit</span>( <span class="ruby-identifier">evt</span> )
+238:                         <span class="ruby-ivar">@uhover_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
+239:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -393,17 +393,19 @@ over.
 
 				<div class="method-description">
 					
-					
+					<p>
+Passes the event to the &#8220;hover&#8221; function
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="on-hover-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 214</span>
-214:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_hover</span>( <span class="ruby-identifier">evt</span> )
-215:                         <span class="ruby-ivar">@hover_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
-216:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 227</span>
+227:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">on_hover</span>( <span class="ruby-identifier">evt</span> )
+228:                         <span class="ruby-ivar">@hover_func</span>.<span class="ruby-identifier">call</span>( <span class="ruby-identifier">evt</span> )
+229:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -427,17 +429,19 @@ over.
 
 				<div class="method-description">
 					
-					
+					<p>
+Registers the function for the &#8220;exit&#8221; event
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="register-exit-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 226</span>
-226:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_exit_event</span>( <span class="ruby-identifier">func</span> )
-227:                         <span class="ruby-ivar">@uhover_func</span> = <span class="ruby-identifier">func</span>
-228:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 242</span>
+242:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_exit_event</span>( <span class="ruby-identifier">func</span> )
+243:                         <span class="ruby-ivar">@uhover_func</span> = <span class="ruby-identifier">func</span>
+244:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -461,17 +465,19 @@ over.
 
 				<div class="method-description">
 					
-					
+					<p>
+Registers the function for the &#8220;hover&#8221; event
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="register-hover-event-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 218</span>
-218:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_hover_event</span>( <span class="ruby-identifier">func</span> )
-219:                         <span class="ruby-ivar">@hover_func</span> = <span class="ruby-identifier">func</span>
-220:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 232</span>
+232:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">register_hover_event</span>( <span class="ruby-identifier">func</span> )
+233:                         <span class="ruby-ivar">@hover_func</span> = <span class="ruby-identifier">func</span>
+234:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

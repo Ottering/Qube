@@ -309,8 +309,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -345,17 +343,23 @@ Allows a component to have an icon, which can be aligned.
 			
 				<dt><a name="LEFT">LEFT</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Left aligned
+</p></dd>
 				
 			
 				<dt><a name="RIGHT">RIGHT</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Right aligned
+</p></dd>
 				
 			
 				<dt><a name="TOP">TOP</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Top (center) aligned
+</p></dd>
 				
 			
 			</dl>
@@ -413,17 +417,19 @@ Allows a component to have an icon, which can be aligned.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the component&#8217;s icon
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="icon-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 301</span>
-301:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon</span>()
-302:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@icon</span>
-303:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 337</span>
+337:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon</span>()
+338:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@icon</span>
+339:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -451,17 +457,19 @@ Allows a component to have an icon, which can be aligned.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the component&#8217;s icon
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="icon--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 306</span>
-306:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon=</span>( <span class="ruby-identifier">val</span> )
-307:                         <span class="ruby-ivar">@icon</span> = <span class="ruby-identifier">val</span>          <span class="ruby-comment cmt"># TODO:  Setup icon via Textures</span>
-308:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 343</span>
+343:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon=</span>( <span class="ruby-identifier">val</span> )
+344:                         <span class="ruby-ivar">@icon</span> = <span class="ruby-identifier">val</span>          <span class="ruby-comment cmt"># TODO:  Setup icon via Textures</span>
+345:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -489,17 +497,19 @@ Allows a component to have an icon, which can be aligned.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the icon&#8217;s alignent
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="icon-alignment-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 311</span>
-311:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon_alignment</span>()
-312:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@icon_align</span>
-313:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 349</span>
+349:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon_alignment</span>()
+350:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@icon_align</span>
+351:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -523,17 +533,19 @@ Allows a component to have an icon, which can be aligned.
 
 				<div class="method-description">
 					
-					
+					<p>
+Set the icon&#8217;s alignment
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="icon-alignment--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 315</span>
-315:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon_alignment=</span>( <span class="ruby-identifier">val</span> )
-316:                         <span class="ruby-ivar">@icon_align</span> = <span class="ruby-identifier">val</span>
-317:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 354</span>
+354:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">icon_alignment=</span>( <span class="ruby-identifier">val</span> )
+355:                         <span class="ruby-ivar">@icon_align</span> = <span class="ruby-identifier">val</span>
+356:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

@@ -126,7 +126,9 @@ module Qube
 	# An event that is raised when a component is attached to, or detached from, a container.
 	class AttachEvent < Event
 
+		# Component was attached
 		ATTACHED = true
+		# Component was removed
 		REMOVED = false
 
 		def initialize( source, state )
@@ -145,10 +147,12 @@ module Qube
 		
 		alias :size :message
 
+		# Returns the new width of this component
 		def width()
 			return size.width
 		end
 
+		# Returns the new height of this component
 		def height()
 			return size.height
 		end
@@ -163,10 +167,12 @@ module Qube
 		
 		alias :bounds :message
 
+		# Return the new X position
 		def x()
 			return bounds.x
 		end
 
+		# Return the new Y position
 		def y()
 			return bounds.y
 		end
@@ -175,10 +181,12 @@ module Qube
 	# State mixin that denotes a component can be pressed.
 	module Pressable
 
+		# Passes the event to the "press" function
 		def on_press( evt )
 			@press_func.call( evt )
 		end
 
+		# Registers the function for the "press" event
 		def register_press_event( func )
 			@press_func = func
 		end
@@ -189,19 +197,23 @@ module Qube
 
 		@state = false
 
+		# Passes the event to the "select" function
 		def on_selection( evt )
 			@select_func.call( evt )
 		end
 		
+		# Registers the function for the "select" event
 		def register_select_event( func )
 			@select_func = func
 		end
 
+		# Returns true if this component has been selected
 		def selected?()
 			return @state
 		end
 		alias :get_selected :selected?
 
+		# Sets the selection state of this component
 		def selected=( flag )
 			@state = flag
 		end
@@ -211,18 +223,22 @@ module Qube
 	# State mixin that denotes a component's state changes when hovered over.
 	module Hover
 
+		# Passes the event to the "hover" function
 		def on_hover( evt )
 			@hover_func.call( evt )
 		end
 		
+		# Registers the function for the "hover" event
 		def register_hover_event( func )
 			@hover_func = func
 		end
 
+		# Passes the event to the "exit" function
 		def on_exit( evt )
 			@uhover_func.call( evt )
 		end
 		
+		# Registers the function for the "exit" event
 		def register_exit_event( func )
 			@uhover_func = func
 		end
@@ -231,10 +247,12 @@ module Qube
 	# State mixin that denotes a component can be enabled or disabled.
 	module Toggle
 		
+		# Sets the enabled flag for this component
 		def enable( flag )
 			@enabled = flag
 		end
 
+		# Returns true if this component is enabled
 		def enabled?()
 			return @enabled
 		end
@@ -244,45 +262,59 @@ module Qube
 	# Allows a component to have a border.
 	module Border
 
-		# Border Styles
-		NONE		= 0b00000000		# Turns off the border property if added
-		SOLID		= 0b00000001		# Solid, monochrome border
-		DASHED		= 0b00000010		# Dashed, monochrome border
-		INSET		= 0b00000100		# Inset beveled edge
-		RAISED		= 0b00000101		# Raised beveled edge
-		HOVER		= 0b00000110		# Drop-shadow
+		# Turns off the border property if added
+		NONE		= 0b00000000
+		# Solid, monochrome border	
+		SOLID		= 0b00000001
+		# Dashed, monochrome border		
+		DASHED		= 0b00000010
+		# Inset beveled edge
+		INSET		= 0b00000100
+		# Raised beveled edge
+		RAISED		= 0b00000101
+		# Drop-shadow
+		HOVER		= 0b00000110
 		
 
-		# Options (ORd)
+		# Has a title
 		TITLED		= 0b00010000
+		# Capped (square) corners
 		CAPPED		= 0b00100000
+		# Angled (mitered) corners
 		MITERED		= 0b01000000
+		# Rounded corners
 		ROUNDED		= 0b10000000
 
 		@border_style = ROUNDED | SOLID
 		@thickness = 1.0
 		@title = ''
 
+		# Returns the style bits for this component
 		def style()
 			return @border_style
 		end
 
+		# Sets the style bits for this component
 		def style=( s )
 			@border_style = s
 		end
 
+		# Returns the thickness of the border, in pixels
 		def thickness()
 			return @thickness
 		end
 
+		# Sets the thickness of the border, in pixels
 		def thickness=( pix )
 			@thickness = pix
 		end
 
+		# Returns the title of the border, or an empty string if one is not present
 		def title()
-			return @title
+			return (defined? @title) ? @title : ''
 		end
 
+		# Sets the title of the border
 		def title=( txt )
 			@title = txt
 		end
@@ -291,27 +323,34 @@ module Qube
 	# Allows a component to have an icon, which can be aligned.
 	module IconComponent
 	
+		# Left aligned
 		LEFT	= 'left'
+		# Right aligned
 		RIGHT	= 'right'
+		# Top (center) aligned
 		TOP		= 'top'
 
 		@icon = nil
 		@icon_align = LEFT
 
+		# Returns the component's icon
 		def icon()
 			return @icon
 		end
 		alias :get_icon :icon
 
+		# Sets the component's icon
 		def icon=( val )
 			@icon = val		# TODO:  Setup icon via Textures
 		end
 		alias :set_icon :icon=
 
+		# Return the icon's alignent
 		def icon_alignment()
 			return @icon_align
 		end
 
+		# Set the icon's alignment
 		def icon_alignment=( val )
 			@icon_align = val
 		end
@@ -320,8 +359,11 @@ module Qube
 	# Allows a component to contain text or display text.  Editing and display options are provided.
 	module TextComponent
 		
+		# Wrap text by word (uses spaces or hyphens)
 		WRAP_BY_WORD	=  1
+		# Wrap text by characters
 		WRAP_BY_CHAR	= -1
+		# Do not wrap lines
 		NO_LINE_WRAP	=  0
 
 		@text = ''
@@ -332,91 +374,109 @@ module Qube
 		@selection = (0..0)
 		@caret = 0
 
+		# Return the component's text
 		def text()
 			return @text
 		end
 		alias :get_text :text
 
+		# Set the component's text
 		def text=( str )
 			@text = str
 		end
 		alias :set_text :text=
 
+		# Append text to this component
 		def append( str )
-			self.text = text << str
+			@text << str
 		end
 		alias :append_text :append
 
+		# Insert text at the specified index; by default this method is the same as append()
 		def insert( str, index = -0 )
 			self.text = text.insert( index, str )
 		end
 		alias :insert_text :insert
 
+		# Returns this component's font
 		def font()
 			return @font
 		end
 		alias :get_font :font
 
+		# Sets this component's font
 		def font=( f )
 			@font = f
 		end
 		alias :set_font :font=
 
+		# Returns the selected text
 		def selected()
 			return @text[ @selection ]
 		end
 		alias :get_selected_text :selected
 
+		# Returns the range of selected characters
 		def selection()
 			return @selection
 		end
 		alias :get_selection :selection
 
+		# Sets the selection range
 		def selection=( *args )
 			args = (0..0) unless args[0]
 			@selection = (args.is_a? Range) ? args : (args[0] .. args[1])
 		end
 		alias :set_selection :selection=
 		
+		# Returns true if the indicated range is within the selected range
 		def selected?( range )
 			return selection.include? range
 		end
 		alias :is_selected? :selected?
 
+		# Returns true if this component is editable
 		def editable?()
 			return @edit
 		end
 		alias :can_edit? :editable?
 
+		# Sets the editable flag of this component
 		def editable=( flag )
 			@edit = flag
 		end
 		alias :enable_editing :editable=
 
+		# Returns true if this component supports multi-line display
 		def multiline?()
 			return @multiline
 		end
 		alias :is_multiline? :multiline?
 
+		# Sets the multi-line flag
 		def multiline=( flag )
 			@multiline = flag
 		end
 		alias :enable_multiline :multiline=
 
+		# Returns the text wrapping method
 		def wrapping()
 			return @wrapping
 		end
 		alias :get_text_wrapping :wrapping
 
+		# Sets the text wrapping method
 		def wrapping=( mode )
 			@wrapping = mode
 		end
 		alias :set_text_wrapping :wrapping=
 		
+		# Returns the caret position
 		def caret()
 			return @caret
 		end
 		
+		# Sets the caret position
 		def caret=( pos )
 			@caret = pos
 		end
@@ -438,12 +498,17 @@ module Qube
 	class UIComponent
 		include Qube::Tree::Leaf
 		
-		# Anchor constants
+		# Anchor is top
 		TOP				= 1
+		# Anchor is left
 		LEFT			= 2
+		# Anchor is bottom
 		BOTTOM			= 4
+		# Anchor is right
 		RIGHT			= 8
+		# Anchor is center
 		CENTER			= 16
+		# Anchor is all sides
 		FILL			= TOP | LEFT | BOTTOM | RIGHT
 
 		def initialize( parent, name = 'component')
@@ -452,45 +517,51 @@ module Qube
 			parent.add( self ) if parent
 		end
 
+		# Returns the size of this component
 		def size()
 			return @size
 		end
 		alias :get_size :size
 
+		# Sets the size of this component
 		def size=( args )
 			@size = Size.new( args )
 		end
 		alias :set_size :size=
 
+		# Returns the location of this component
 		def location()
 			return @location
 		end
-		alias :get_location :location
+		alias :position :location
 
+		# Sets the location of this component
 		def location=( args )
 			@location = Location.new( args )
 		end
-		alias :set_location :location=
+		alias :position= :location=
 
+		# Returns the anchoring bits of this component
 		def anchor()
 			return @anchor
 		end
 		alias :get_anchoring :anchor
 
+		# Sets the anchoring bits
 		def anchor=( val )
 			@anchor = val
 		end
 		alias :set_anchoring :anchor=
 
+		# Returns true if this component is enabled
 		def enabled?()
 			return @enabled
 		end
-		alias :get_enabled :enabled?
 
+		# Sets the enabled flag
 		def enabled=( flag )
 			@enabled = flag
 		end
-		alias :set_enabled :enabled=
 	end
 
 	# Low-level container.  Holds child components within its bounds.
@@ -507,15 +578,19 @@ module Qube
 	# around them within the layout, dependent upon their main orientaton (HORIZONTAL or VERTICAL).
 	class Separator < UIComponent
 		
+		# Span is horizontal
 		HORIZONTAL 		= 0b00
+		# Span is vertical
 		VERTICAL 		= 0b01
-		SPAN 			= 0b10
+		# Dynamically fill
+		SPAN			= 0b10
 
 		def initialize( parent, orientation )
 			super( parent, 'separator')
 			@orientation = orientation
 		end
 
+		# Returns the orientation
 		def orientation()
 			return @orientation
 		end
@@ -526,8 +601,11 @@ module Qube
 	class Label < UIComponent
 		include IconComponent, TextComponent
 		
+		# Left alignment
 		LEFT 	= 'left'
+		# Right alignment
 		RIGHT 	= 'right'
+		# Center alignment
 		CENTER	= 'center'
 
 		def initialize( parent, name, text, align = LEFT, icon = nil )
@@ -541,51 +619,69 @@ module Qube
 	class ProgressBar < UIComponent
 		include TextComponent
 		
+		# Horizontal bar
 		HORIZONTAL		= 'h'
+		# Vertical bar
 		VERTICAL		= 'v'
 
-		def initialize( parent, name, min = 0.0, max = 1.0, show_progress = false, orientation = HORIZONTAL )
+		def initialize( parent, name, min = 0.0, max = 1.0, show_str = false, orientation = HORIZONTAL, reverse = false )
 			super( parent, name )
 			@min = min
 			@max = max
-			@progress = @min
-			@show = show_progress
+			@progress = @min.clone
+			@show = show_str
+			@orientation = oientation
+			@reverse = reverse
 		end
 
+		# Returns true if the progress string should be drawn
 		def show_progress?()
 			return @show
 		end
 
+		# Sets the progress string display flag
 		def show_progress=( enabled )
 			@show = enabled
 		end
 
+		# Returns the minimum value
 		def min()
 			return @min
 		end
 
+		# Sets the minimum value
 		def min=( min )
 			@min = min
 		end
 
+		# Returns the maximum value
 		def max()
 			return @max
 		end
 
+		# Sets the maximum value
 		def max=( max )
 			@max = max
 		end
 
+		# Returns the current progress
 		def progress()
 			return @progress
 		end
 
+		# Sets the current progress
 		def progress=( current )
 			@progress = current
 		end
+		
+		# Returns the current progress percentage
+		def percent()
+			return @progress / @max
+		end
 
-		def text( chop = false )
-			return (progress / max) * 100.0
+		# Returns the current progress percentage as text
+		def text()
+			return "#{percent * 100.0}"
 		end
 	end
 
@@ -627,8 +723,11 @@ module Qube
 	# Simple scrollable viewport.
 	class ScrollPane < Container
 	
+		# Use horizontal scroll bar
 		HORIZONTAL	= 0b01
+		# Use vertical scroll bar
 		VERTICAL	= 0b10
+		# Use both scroll bars
 		BOTH		= HORIZONTAL | VERTICAL
 		
 		def initialize( parent, name, bars = BOTH )
@@ -636,10 +735,12 @@ module Qube
 			@bars = bars
 		end
 		
+		# Return the bar setting
 		def bars()
 			return @bars
 		end
 		
+		# Set the bar setting
 		def bars=( bars )
 			@bars = bars
 		end
@@ -654,24 +755,29 @@ module Qube
 			load( type, source )
 		end
 		
+		# Return the name of the font
 		def name()
 			return @name
 		end
 		
+		# Return the size of the font
 		def size()
 			return @size
 		end
 		
+		# Return the character height
 		def character_height()
 			#
 		end
 		alias :height :character_height
 
+		# Return the character width
 		def character_width()
 			#
 		end
 		alias :width :character_width
 		
+		# Return a scaled instance of the font
 		def scale( size )
 			# TODO:  Attempt to scale font to new size; return new font instance
 		end
@@ -700,6 +806,7 @@ module Qube
 			@alt_key = alt_key
 		end
 
+		# Return the alt key for selecting this menu
 		def alt_key()
 			return @alt_key
 		end
@@ -715,7 +822,8 @@ module Qube
 			self.text = text
 			@shortcut = shortcut
 		end
-
+		
+		# Return the hotkey (shortcut) 
 		def shortcut()
 			return @shortcut
 		end
@@ -724,14 +832,20 @@ module Qube
 	# Simple Frame (window).
 	class Frame < Container
 	
-		# Window Buttons
+		# Close the window
 		CLOSE			= 1
+		# Roll up into "window shade"
 		SHADE			= 2
+		# Minimize
 		ICONIFY			= 4
-		RESIZE			= 8
+		# Maximize
+		MAXIMIZE		= 8
+		# Restore
 		RESTORE			= 16
+		# Default configuration
 		DEFAULT			= CLOSE | SHADE | ICONIFY
-		ALL				= DEFAULT | RESIZE | RESTORE
+		# All options
+		ALL				= DEFAULT | MAXIMIZE | RESTORE
 
 		def initialize( parent, title, buttons = CLOSE, icon = nil )
 			super( parent, title )

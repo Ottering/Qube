@@ -306,8 +306,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -343,33 +341,43 @@ Simple <a href="Frame.html">Frame</a> (window).
 				<dt><a name="CLOSE">CLOSE</a></dt>
 				
 				<dd class="description"><p>
-Window Buttons
+Close the window
 </p></dd>
 				
 			
 				<dt><a name="SHADE">SHADE</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Roll up into &#8220;window shade&#8220;
+</p></dd>
 				
 			
 				<dt><a name="ICONIFY">ICONIFY</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Minimize
+</p></dd>
 				
 			
-				<dt><a name="RESIZE">RESIZE</a></dt>
+				<dt><a name="MAXIMIZE">MAXIMIZE</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Maximize
+</p></dd>
 				
 			
 				<dt><a name="RESTORE">RESTORE</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Restore
+</p></dd>
 				
 			
 				<dt><a name="DEFAULT">DEFAULT</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Default configuration
+</p></dd>
 				
 			
 				<dt><a name="ALL">ALL</a></dt>
@@ -410,11 +418,11 @@ Window Buttons
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 736</span>
-736:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">buttons</span> = <span class="ruby-constant">CLOSE</span>, <span class="ruby-identifier">icon</span> = <span class="ruby-keyword kw">nil</span> )
-737:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">title</span> )
-738:                         <span class="ruby-comment cmt"># TODO:  Frame setup</span>
-739:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 850</span>
+850:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">buttons</span> = <span class="ruby-constant">CLOSE</span>, <span class="ruby-identifier">icon</span> = <span class="ruby-keyword kw">nil</span> )
+851:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">title</span> )
+852:                         <span class="ruby-comment cmt"># TODO:  Frame setup</span>
+853:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

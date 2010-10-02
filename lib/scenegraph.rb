@@ -508,8 +508,11 @@ module Qube
 	# Generic bounding mixin
 	module Bounds
 
+		# The node intersects
 		INTERSECTS		= 2
+		# The node is outside of the bounds
 		OUTSIDE			= -1
+		# The node is inside of the bounds
 		INSIDE			= 1
 
 		# Returns if this bounds intersects the passed node

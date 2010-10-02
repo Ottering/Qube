@@ -310,8 +310,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -370,10 +368,10 @@ An event that is raised when a component is resized.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 142</span>
-142:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">source</span>, <span class="ruby-identifier">size</span> )
-143:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">source</span>, <span class="ruby-identifier">size</span> )
-144:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 144</span>
+144:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">source</span>, <span class="ruby-identifier">size</span> )
+145:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">source</span>, <span class="ruby-identifier">size</span> )
+146:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -403,17 +401,19 @@ An event that is raised when a component is resized.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the new height of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="height-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 152</span>
-152:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height</span>()
-153:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">height</span>
-154:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 156</span>
+156:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height</span>()
+157:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">height</span>
+158:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -437,17 +437,19 @@ An event that is raised when a component is resized.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the new width of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="width-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 148</span>
-148:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width</span>()
-149:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">width</span>
-150:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 151</span>
+151:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width</span>()
+152:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">width</span>
+153:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

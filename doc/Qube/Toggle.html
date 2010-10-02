@@ -303,8 +303,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -356,17 +354,19 @@ State mixin that denotes a component can be enabled or disabled.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the enabled flag for this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="enable-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 234</span>
-234:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enable</span>( <span class="ruby-identifier">flag</span> )
-235:                         <span class="ruby-ivar">@enabled</span> = <span class="ruby-identifier">flag</span>
-236:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 251</span>
+251:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enable</span>( <span class="ruby-identifier">flag</span> )
+252:                         <span class="ruby-ivar">@enabled</span> = <span class="ruby-identifier">flag</span>
+253:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -390,17 +390,19 @@ State mixin that denotes a component can be enabled or disabled.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns true if this component is enabled
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="enabled--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 238</span>
-238:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled?</span>()
-239:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@enabled</span>
-240:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 256</span>
+256:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled?</span>()
+257:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@enabled</span>
+258:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

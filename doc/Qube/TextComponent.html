@@ -371,8 +371,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -408,17 +406,23 @@ options are provided.
 			
 				<dt><a name="WRAP_BY_WORD">WRAP_BY_WORD</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Wrap text by word (uses spaces or hyphens)
+</p></dd>
 				
 			
 				<dt><a name="WRAP_BY_CHAR">WRAP_BY_CHAR</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Wrap text by characters
+</p></dd>
 				
 			
 				<dt><a name="NO_LINE_WRAP">NO_LINE_WRAP</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Do not wrap lines
+</p></dd>
 				
 			
 			</dl>
@@ -447,17 +451,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Append text to this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="append-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 345</span>
-345:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append</span>( <span class="ruby-identifier">str</span> )
-346:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span>
-347:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 390</span>
+390:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">append</span>( <span class="ruby-identifier">str</span> )
+391:                         <span class="ruby-ivar">@text</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span>
+392:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -543,17 +549,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the caret position
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="caret-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 416</span>
-416:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">caret</span>()
-417:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@caret</span>
-418:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 475</span>
+475:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">caret</span>()
+476:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@caret</span>
+477:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -577,17 +585,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the caret position
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="caret--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 420</span>
-420:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">caret=</span>( <span class="ruby-identifier">pos</span> )
-421:                         <span class="ruby-ivar">@caret</span> = <span class="ruby-identifier">pos</span>
-422:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 480</span>
+480:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">caret=</span>( <span class="ruby-identifier">pos</span> )
+481:                         <span class="ruby-ivar">@caret</span> = <span class="ruby-identifier">pos</span>
+482:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -618,10 +628,10 @@ options are provided.
 					<div class="method-source-code"
 						id="cols-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 428</span>
-428:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cols</span>()
-429:                         <span class="ruby-comment cmt"># TODO:  Return total cols of text</span>
-430:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 488</span>
+488:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cols</span>()
+489:                         <span class="ruby-comment cmt"># TODO:  Return total cols of text</span>
+490:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -645,17 +655,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the editable flag of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="editable--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 391</span>
-391:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">editable=</span>( <span class="ruby-identifier">flag</span> )
-392:                         <span class="ruby-ivar">@edit</span> = <span class="ruby-identifier">flag</span>
-393:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 445</span>
+445:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">editable=</span>( <span class="ruby-identifier">flag</span> )
+446:                         <span class="ruby-ivar">@edit</span> = <span class="ruby-identifier">flag</span>
+447:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -683,17 +695,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns true if this component is editable
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="editable--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 386</span>
-386:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">editable?</span>()
-387:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@edit</span>
-388:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 439</span>
+439:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">editable?</span>()
+440:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@edit</span>
+441:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -786,10 +800,10 @@ options are provided.
 					<div class="method-source-code"
 						id="fit-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 432</span>
-432:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fit</span>()
-433:                         <span class="ruby-comment cmt"># TODO:  Recalculate text rows/cols and fit.</span>
-434:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 492</span>
+492:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fit</span>()
+493:                         <span class="ruby-comment cmt"># TODO:  Recalculate text rows/cols and fit.</span>
+494:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -813,17 +827,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns this component&#8217;s font
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="font-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 355</span>
-355:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">font</span>()
-356:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@font</span>
-357:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 402</span>
+402:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">font</span>()
+403:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@font</span>
+404:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -851,17 +867,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets this component&#8217;s font
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="font--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 360</span>
-360:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">font=</span>( <span class="ruby-identifier">f</span> )
-361:                         <span class="ruby-ivar">@font</span> = <span class="ruby-identifier">f</span>
-362:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 408</span>
+408:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">font=</span>( <span class="ruby-identifier">f</span> )
+409:                         <span class="ruby-ivar">@font</span> = <span class="ruby-identifier">f</span>
+410:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1034,17 +1052,20 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Insert text at the specified index; by default this method is the same as
+append()
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="insert-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 350</span>
-350:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">insert</span>( <span class="ruby-identifier">str</span>, <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span> )
-351:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">insert</span>( <span class="ruby-identifier">index</span>, <span class="ruby-identifier">str</span> )
-352:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 396</span>
+396:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">insert</span>( <span class="ruby-identifier">str</span>, <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span> )
+397:                         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">insert</span>( <span class="ruby-identifier">index</span>, <span class="ruby-identifier">str</span> )
+398:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1159,17 +1180,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the multi-line flag
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="multiline--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 401</span>
-401:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiline=</span>( <span class="ruby-identifier">flag</span> )
-402:                         <span class="ruby-ivar">@multiline</span> = <span class="ruby-identifier">flag</span>
-403:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 457</span>
+457:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiline=</span>( <span class="ruby-identifier">flag</span> )
+458:                         <span class="ruby-ivar">@multiline</span> = <span class="ruby-identifier">flag</span>
+459:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1197,17 +1220,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns true if this component supports multi-line display
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="multiline--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 396</span>
-396:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiline?</span>()
-397:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@multiline</span>
-398:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 451</span>
+451:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">multiline?</span>()
+452:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@multiline</span>
+453:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1242,10 +1267,10 @@ options are provided.
 					<div class="method-source-code"
 						id="rows-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 424</span>
-424:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rows</span>()
-425:                         <span class="ruby-comment cmt"># TODO:  Return total rows of text</span>
-426:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 484</span>
+484:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rows</span>()
+485:                         <span class="ruby-comment cmt"># TODO:  Return total rows of text</span>
+486:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1269,17 +1294,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the selected text
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="selected-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 365</span>
-365:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected</span>()
-366:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@text</span>[ <span class="ruby-ivar">@selection</span> ]
-367:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 414</span>
+414:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected</span>()
+415:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@text</span>[ <span class="ruby-ivar">@selection</span> ]
+416:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1307,17 +1334,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns true if the indicated range is within the selected range
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="selected--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 381</span>
-381:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected?</span>( <span class="ruby-identifier">range</span> )
-382:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">selection</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">range</span>
-383:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 433</span>
+433:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected?</span>( <span class="ruby-identifier">range</span> )
+434:                         <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">selection</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">range</span>
+435:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1345,17 +1374,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the range of selected characters
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="selection-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 370</span>
-370:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selection</span>()
-371:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@selection</span>
-372:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 420</span>
+420:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selection</span>()
+421:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@selection</span>
+422:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1383,18 +1414,20 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the selection range
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="selection--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 375</span>
-375:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selection=</span>( *<span class="ruby-identifier">args</span> )
-376:                         <span class="ruby-identifier">args</span> = (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
-377:                         <span class="ruby-ivar">@selection</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">..</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>])
-378:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 426</span>
+426:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selection=</span>( *<span class="ruby-identifier">args</span> )
+427:                         <span class="ruby-identifier">args</span> = (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>]
+428:                         <span class="ruby-ivar">@selection</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">..</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">1</span>])
+429:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1538,17 +1571,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the component&#8217;s text
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="text-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 335</span>
-335:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text</span>()
-336:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@text</span>
-337:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 378</span>
+378:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text</span>()
+379:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@text</span>
+380:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1576,17 +1611,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Set the component&#8217;s text
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="text--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 340</span>
-340:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text=</span>( <span class="ruby-identifier">str</span> )
-341:                         <span class="ruby-ivar">@text</span> = <span class="ruby-identifier">str</span>
-342:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 384</span>
+384:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text=</span>( <span class="ruby-identifier">str</span> )
+385:                         <span class="ruby-ivar">@text</span> = <span class="ruby-identifier">str</span>
+386:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1614,17 +1651,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the text wrapping method
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="wrapping-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 406</span>
-406:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wrapping</span>()
-407:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@wrapping</span>
-408:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 463</span>
+463:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wrapping</span>()
+464:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@wrapping</span>
+465:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -1652,17 +1691,19 @@ options are provided.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the text wrapping method
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="wrapping--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 411</span>
-411:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wrapping=</span>( <span class="ruby-identifier">mode</span> )
-412:                         <span class="ruby-ivar">@wrapping</span> = <span class="ruby-identifier">mode</span>
-413:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 469</span>
+469:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wrapping=</span>( <span class="ruby-identifier">mode</span> )
+470:                         <span class="ruby-ivar">@wrapping</span> = <span class="ruby-identifier">mode</span>
+471:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

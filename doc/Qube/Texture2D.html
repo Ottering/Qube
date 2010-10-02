@@ -308,8 +308,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -368,34 +366,34 @@
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 675</span>
-675:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">binary</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">profile</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBA</span>, <span class="ruby-identifier">mipmap</span> = <span class="ruby-keyword kw">false</span> )
-676:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TEXTURE_2D</span>, <span class="ruby-identifier">binary</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">profile</span>, <span class="ruby-identifier">mipmap</span> )
-677: 
-678:                         <span class="ruby-comment cmt"># Create the image</span>
-679:                         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">mipmap?</span>
-680:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">TexImage2D</span>(
-681:                                         <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TEXTURE_2D</span>,
-682:                                         <span class="ruby-value">0</span>,                 <span class="ruby-comment cmt"># Level of Detail</span>
-683:                                         <span class="ruby-identifier">channels</span>,  <span class="ruby-comment cmt"># Number of channels</span>
-684:                                         <span class="ruby-identifier">width</span>,
-685:                                         <span class="ruby-identifier">height</span>,
-686:                                         <span class="ruby-value">0</span>,                 <span class="ruby-comment cmt"># Border?</span>
-687:                                         <span class="ruby-identifier">format</span>,            <span class="ruby-comment cmt"># Image Type</span>
-688:                                         <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">UNSIGNED_BYTE</span>,
-689:                                         <span class="ruby-identifier">data</span>
-690:                                 )
-691:                         <span class="ruby-keyword kw">else</span>
-692:                                 <span class="ruby-constant">GLU</span>.<span class="ruby-constant">Build2DMipmaps</span>(
-693:                                         <span class="ruby-identifier">channels</span>,  <span class="ruby-comment cmt"># Number of channels</span>
-694:                                         <span class="ruby-identifier">width</span>,
-695:                                         <span class="ruby-identifier">height</span>,
-696:                                         <span class="ruby-identifier">format</span>,            <span class="ruby-comment cmt"># Image Type</span>
-697:                                         <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">UNSIGNED_BYTE</span>,
-698:                                         <span class="ruby-identifier">data</span>
-699:                                 )
-700:                         <span class="ruby-keyword kw">end</span>
-701:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 678</span>
+678:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">binary</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">profile</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">RGBA</span>, <span class="ruby-identifier">mipmap</span> = <span class="ruby-keyword kw">false</span> )
+679:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TEXTURE_2D</span>, <span class="ruby-identifier">binary</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">profile</span>, <span class="ruby-identifier">mipmap</span> )
+680: 
+681:                         <span class="ruby-comment cmt"># Create the image</span>
+682:                         <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">mipmap?</span>
+683:                                 <span class="ruby-constant">GL</span>.<span class="ruby-constant">TexImage2D</span>(
+684:                                         <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">TEXTURE_2D</span>,
+685:                                         <span class="ruby-value">0</span>,                 <span class="ruby-comment cmt"># Level of Detail</span>
+686:                                         <span class="ruby-identifier">channels</span>,  <span class="ruby-comment cmt"># Number of channels</span>
+687:                                         <span class="ruby-identifier">width</span>,
+688:                                         <span class="ruby-identifier">height</span>,
+689:                                         <span class="ruby-value">0</span>,                 <span class="ruby-comment cmt"># Border?</span>
+690:                                         <span class="ruby-identifier">format</span>,            <span class="ruby-comment cmt"># Image Type</span>
+691:                                         <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">UNSIGNED_BYTE</span>,
+692:                                         <span class="ruby-identifier">data</span>
+693:                                 )
+694:                         <span class="ruby-keyword kw">else</span>
+695:                                 <span class="ruby-constant">GLU</span>.<span class="ruby-constant">Build2DMipmaps</span>(
+696:                                         <span class="ruby-identifier">channels</span>,  <span class="ruby-comment cmt"># Number of channels</span>
+697:                                         <span class="ruby-identifier">width</span>,
+698:                                         <span class="ruby-identifier">height</span>,
+699:                                         <span class="ruby-identifier">format</span>,            <span class="ruby-comment cmt"># Image Type</span>
+700:                                         <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">UNSIGNED_BYTE</span>,
+701:                                         <span class="ruby-identifier">data</span>
+702:                                 )
+703:                         <span class="ruby-keyword kw">end</span>
+704:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -434,10 +432,10 @@ Convenience method for reading full file name
 					<div class="method-source-code"
 						id="create-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 704</span>
-704:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>( <span class="ruby-identifier">file</span>, <span class="ruby-identifier">format</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">RGB</span>, <span class="ruby-identifier">mipmap</span> = <span class="ruby-keyword kw">false</span> )
-705:                         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Texture2D</span>.<span class="ruby-identifier">new</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>( <span class="ruby-identifier">file</span> ), <span class="ruby-identifier">format</span>, <span class="ruby-identifier">mipmap</span> )
-706:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 707</span>
+707:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>( <span class="ruby-identifier">file</span>, <span class="ruby-identifier">format</span> = <span class="ruby-constant">GL</span><span class="ruby-operator">::</span><span class="ruby-constant">RGB</span>, <span class="ruby-identifier">mipmap</span> = <span class="ruby-keyword kw">false</span> )
+708:                         <span class="ruby-keyword kw">return</span> <span class="ruby-constant">Texture2D</span>.<span class="ruby-identifier">new</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>( <span class="ruby-identifier">file</span> ), <span class="ruby-identifier">format</span>, <span class="ruby-identifier">mipmap</span> )
+709:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

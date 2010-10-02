@@ -329,8 +329,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -389,12 +387,12 @@ Cuboid bounding region.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 549</span>
-549:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">depth</span> )
-550:                         <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">width</span>
-551:                         <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">height</span>
-552:                         <span class="ruby-ivar">@depth</span> = <span class="ruby-identifier">depth</span>
-553:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 552</span>
+552:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">depth</span> )
+553:                         <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">width</span>
+554:                         <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">height</span>
+555:                         <span class="ruby-ivar">@depth</span> = <span class="ruby-identifier">depth</span>
+556:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -433,10 +431,10 @@ Return the box&#8217;s depth
 					<div class="method-source-code"
 						id="depth-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 576</span>
-576:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depth</span>()
-577:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@depth</span>
-578:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 579</span>
+579:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depth</span>()
+580:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@depth</span>
+581:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -469,10 +467,10 @@ Set the box&#8217;s depth
 					<div class="method-source-code"
 						id="depth--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 581</span>
-581:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depth=</span>( <span class="ruby-identifier">val</span> )
-582:                         <span class="ruby-ivar">@depth</span> = <span class="ruby-identifier">val</span>
-583:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 584</span>
+584:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">depth=</span>( <span class="ruby-identifier">val</span> )
+585:                         <span class="ruby-ivar">@depth</span> = <span class="ruby-identifier">val</span>
+586:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -505,10 +503,10 @@ Return the box&#8217;s height
 					<div class="method-source-code"
 						id="height-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 566</span>
-566:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height</span>()
-567:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@height</span>
-568:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 569</span>
+569:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height</span>()
+570:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@height</span>
+571:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -541,10 +539,10 @@ Set the box&#8217;s height
 					<div class="method-source-code"
 						id="height--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 571</span>
-571:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height=</span>( <span class="ruby-identifier">val</span> )
-572:                         <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">val</span>
-573:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 574</span>
+574:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">height=</span>( <span class="ruby-identifier">val</span> )
+575:                         <span class="ruby-ivar">@height</span> = <span class="ruby-identifier">val</span>
+576:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -577,10 +575,10 @@ Return the box&#8217;s width.
 					<div class="method-source-code"
 						id="width-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 556</span>
-556:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width</span>()
-557:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@width</span>
-558:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 559</span>
+559:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width</span>()
+560:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@width</span>
+561:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -613,10 +611,10 @@ Set the box&#8217;s width
 					<div class="method-source-code"
 						id="width--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 561</span>
-561:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width=</span>( <span class="ruby-identifier">val</span> )
-562:                         <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">val</span>
-563:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/scenegraph.rb, line 564</span>
+564:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">width=</span>( <span class="ruby-identifier">val</span> )
+565:                         <span class="ruby-ivar">@width</span> = <span class="ruby-identifier">val</span>
+566:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

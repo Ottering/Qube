@@ -79,6 +79,8 @@
 					
 					<li><a href="#method-i-min%3D">#min=</a></li>
 					
+					<li><a href="#method-i-percent">#percent</a></li>
+					
 					<li><a href="#method-i-progress">#progress</a></li>
 					
 					<li><a href="#method-i-progress%3D">#progress=</a></li>
@@ -335,8 +337,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -371,12 +371,16 @@ Simple progress indicator bar.
 			
 				<dt><a name="HORIZONTAL">HORIZONTAL</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Horizontal bar
+</p></dd>
 				
 			
 				<dt><a name="VERTICAL">VERTICAL</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Vertical bar
+</p></dd>
 				
 			
 			</dl>
@@ -398,7 +402,7 @@ Simple progress indicator bar.
 				<div class="method-heading">
 				
 					<span class="method-name">new</span><span
-						class="method-args">( parent, name, min = 0.0, max = 1.0, show_progress = false, orientation = HORIZONTAL )</span>
+						class="method-args">( parent, name, min = 0.0, max = 1.0, show_str = false, orientation = HORIZONTAL, reverse = false )</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -412,14 +416,16 @@ Simple progress indicator bar.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 547</span>
-547:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">min</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">max</span> = <span class="ruby-value">1.0</span>, <span class="ruby-identifier">show_progress</span> = <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">orientation</span> = <span class="ruby-constant">HORIZONTAL</span> )
-548:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
-549:                         <span class="ruby-ivar">@min</span> = <span class="ruby-identifier">min</span>
-550:                         <span class="ruby-ivar">@max</span> = <span class="ruby-identifier">max</span>
-551:                         <span class="ruby-ivar">@progress</span> = <span class="ruby-ivar">@min</span>
-552:                         <span class="ruby-ivar">@show</span> = <span class="ruby-identifier">show_progress</span>
-553:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 627</span>
+627:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">min</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">max</span> = <span class="ruby-value">1.0</span>, <span class="ruby-identifier">show_str</span> = <span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">orientation</span> = <span class="ruby-constant">HORIZONTAL</span>, <span class="ruby-identifier">reverse</span> = <span class="ruby-keyword kw">false</span> )
+628:                         <span class="ruby-keyword kw">super</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> )
+629:                         <span class="ruby-ivar">@min</span> = <span class="ruby-identifier">min</span>
+630:                         <span class="ruby-ivar">@max</span> = <span class="ruby-identifier">max</span>
+631:                         <span class="ruby-ivar">@progress</span> = <span class="ruby-ivar">@min</span>.<span class="ruby-identifier">clone</span>
+632:                         <span class="ruby-ivar">@show</span> = <span class="ruby-identifier">show_str</span>
+633:                         <span class="ruby-ivar">@orientation</span> = <span class="ruby-identifier">oientation</span>
+634:                         <span class="ruby-ivar">@reverse</span> = <span class="ruby-identifier">reverse</span>
+635:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -449,17 +455,19 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the maximum value
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="max-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 571</span>
-571:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max</span>()
-572:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@max</span>
-573:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 658</span>
+658:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max</span>()
+659:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@max</span>
+660:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -483,17 +491,19 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the maximum value
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="max--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 575</span>
-575:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max=</span>( <span class="ruby-identifier">max</span> )
-576:                         <span class="ruby-ivar">@max</span> = <span class="ruby-identifier">max</span>
-577:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 663</span>
+663:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">max=</span>( <span class="ruby-identifier">max</span> )
+664:                         <span class="ruby-ivar">@max</span> = <span class="ruby-identifier">max</span>
+665:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -517,17 +527,19 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the minimum value
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="min-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 563</span>
-563:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min</span>()
-564:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@min</span>
-565:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 648</span>
+648:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min</span>()
+649:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@min</span>
+650:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -551,17 +563,55 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the minimum value
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="min--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 567</span>
-567:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min=</span>( <span class="ruby-identifier">min</span> )
-568:                         <span class="ruby-ivar">@min</span> = <span class="ruby-identifier">min</span>
-569:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 653</span>
+653:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">min=</span>( <span class="ruby-identifier">min</span> )
+654:                         <span class="ruby-ivar">@min</span> = <span class="ruby-identifier">min</span>
+655:                 <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="percent-method" class="method-detail ">
+				<a name="method-i-percent"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">percent</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the current progress percentage
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="percent-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 678</span>
+678:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">percent</span>()
+679:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@progress</span> <span class="ruby-operator">/</span> <span class="ruby-ivar">@max</span>
+680:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -585,17 +635,19 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the current progress
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="progress-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 579</span>
-579:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">progress</span>()
-580:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@progress</span>
-581:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 668</span>
+668:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">progress</span>()
+669:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@progress</span>
+670:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -619,17 +671,19 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the current progress
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="progress--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 583</span>
-583:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">progress=</span>( <span class="ruby-identifier">current</span> )
-584:                         <span class="ruby-ivar">@progress</span> = <span class="ruby-identifier">current</span>
-585:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 673</span>
+673:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">progress=</span>( <span class="ruby-identifier">current</span> )
+674:                         <span class="ruby-ivar">@progress</span> = <span class="ruby-identifier">current</span>
+675:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -653,17 +707,19 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the progress string display flag
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="show-progress--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 559</span>
-559:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_progress=</span>( <span class="ruby-identifier">enabled</span> )
-560:                         <span class="ruby-ivar">@show</span> = <span class="ruby-identifier">enabled</span>
-561:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 643</span>
+643:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_progress=</span>( <span class="ruby-identifier">enabled</span> )
+644:                         <span class="ruby-ivar">@show</span> = <span class="ruby-identifier">enabled</span>
+645:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -687,17 +743,19 @@ Simple progress indicator bar.
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns true if the progress string should be drawn
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="show-progress--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 555</span>
-555:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_progress?</span>()
-556:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@show</span>
-557:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 638</span>
+638:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_progress?</span>()
+639:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@show</span>
+640:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -714,24 +772,26 @@ Simple progress indicator bar.
 				<div class="method-heading">
 				
 					<span class="method-name">text</span><span
-						class="method-args">( chop = false )</span>
+						class="method-args">()</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the current progress percentage as text
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="text-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 587</span>
-587:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text</span>( <span class="ruby-identifier">chop</span> = <span class="ruby-keyword kw">false</span> )
-588:                         <span class="ruby-keyword kw">return</span> (<span class="ruby-identifier">progress</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">max</span>) * <span class="ruby-value">100.0</span>
-589:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 683</span>
+683:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">text</span>()
+684:                         <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;#{percent * 100.0}&quot;</span>
+685:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

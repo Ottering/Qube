@@ -81,21 +81,17 @@
 					
 					<li><a href="#method-i-get_anchoring">#get_anchoring</a></li>
 					
-					<li><a href="#method-i-get_enabled">#get_enabled</a></li>
-					
-					<li><a href="#method-i-get_location">#get_location</a></li>
-					
 					<li><a href="#method-i-get_size">#get_size</a></li>
 					
 					<li><a href="#method-i-location">#location</a></li>
 					
 					<li><a href="#method-i-location%3D">#location=</a></li>
 					
+					<li><a href="#method-i-position">#position</a></li>
+					
+					<li><a href="#method-i-position%3D">#position=</a></li>
+					
 					<li><a href="#method-i-set_anchoring">#set_anchoring</a></li>
-					
-					<li><a href="#method-i-set_enabled">#set_enabled</a></li>
-					
-					<li><a href="#method-i-set_location">#set_location</a></li>
 					
 					<li><a href="#method-i-set_size">#set_size</a></li>
 					
@@ -349,8 +345,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -387,33 +381,43 @@ placement.
 				<dt><a name="TOP">TOP</a></dt>
 				
 				<dd class="description"><p>
-Anchor constants
+Anchor is top
 </p></dd>
 				
 			
 				<dt><a name="LEFT">LEFT</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Anchor is left
+</p></dd>
 				
 			
 				<dt><a name="BOTTOM">BOTTOM</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Anchor is bottom
+</p></dd>
 				
 			
 				<dt><a name="RIGHT">RIGHT</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Anchor is right
+</p></dd>
 				
 			
 				<dt><a name="CENTER">CENTER</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Anchor is center
+</p></dd>
 				
 			
 				<dt><a name="FILL">FILL</a></dt>
 				
-				<dd class="description"></dd>
+				<dd class="description"><p>
+Anchor is all sides
+</p></dd>
 				
 			
 			</dl>
@@ -449,12 +453,12 @@ Anchor constants
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 449</span>
-449:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> = <span class="ruby-value str">'component'</span>)
-450:                         <span class="ruby-ivar">@parent</span> = <span class="ruby-identifier">parent</span>
-451:                         <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
-452:                         <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">add</span>( <span class="ruby-keyword kw">self</span> ) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parent</span>
-453:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 514</span>
+514:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span> = <span class="ruby-value str">'component'</span>)
+515:                         <span class="ruby-ivar">@parent</span> = <span class="ruby-identifier">parent</span>
+516:                         <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+517:                         <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">add</span>( <span class="ruby-keyword kw">self</span> ) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">parent</span>
+518:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -484,17 +488,19 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the anchoring bits of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="anchor-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 475</span>
-475:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">anchor</span>()
-476:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@anchor</span>
-477:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 545</span>
+545:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">anchor</span>()
+546:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@anchor</span>
+547:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -522,17 +528,19 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the anchoring bits
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="anchor--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 480</span>
-480:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">anchor=</span>( <span class="ruby-identifier">val</span> )
-481:                         <span class="ruby-ivar">@anchor</span> = <span class="ruby-identifier">val</span>
-482:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 551</span>
+551:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">anchor=</span>( <span class="ruby-identifier">val</span> )
+552:                         <span class="ruby-ivar">@anchor</span> = <span class="ruby-identifier">val</span>
+553:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -560,25 +568,23 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the enabled flag
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="enabled--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 490</span>
-490:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled=</span>( <span class="ruby-identifier">flag</span> )
-491:                         <span class="ruby-ivar">@enabled</span> = <span class="ruby-identifier">flag</span>
-492:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 562</span>
+562:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled=</span>( <span class="ruby-identifier">flag</span> )
+563:                         <span class="ruby-ivar">@enabled</span> = <span class="ruby-identifier">flag</span>
+564:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
-				
-				<div class="aliases">
-					Also aliased as: <a href="UIComponent.html#method-i-set_enabled">set_enabled</a>
-				</div>
 				
 
 				
@@ -598,25 +604,23 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns true if this component is enabled
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="enabled--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 485</span>
-485:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled?</span>()
-486:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@enabled</span>
-487:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 557</span>
+557:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled?</span>()
+558:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@enabled</span>
+559:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
-				
-				<div class="aliases">
-					Also aliased as: <a href="UIComponent.html#method-i-get_enabled">get_enabled</a>
-				</div>
 				
 
 				
@@ -647,64 +651,6 @@ Anchor constants
 				
 				<div class="aliases">
           Alias for: <a href="UIComponent.html#method-i-anchor">anchor</a>
-				</div>
-				
-			</div>
-
-		
-			<div id="get-enabled-method" class="method-detail method-alias">
-				<a name="method-i-get_enabled"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">get_enabled</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-				</div>
-
-				
-
-				
-				<div class="aliases">
-          Alias for: <a href="UIComponent.html#method-i-enabled%3F">enabled?</a>
-				</div>
-				
-			</div>
-
-		
-			<div id="get-location-method" class="method-detail method-alias">
-				<a name="method-i-get_location"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">get_location</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-				</div>
-
-				
-
-				
-				<div class="aliases">
-          Alias for: <a href="UIComponent.html#method-i-location">location</a>
 				</div>
 				
 			</div>
@@ -752,24 +698,26 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the location of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="location-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 465</span>
-465:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">location</span>()
-466:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@location</span>
-467:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 533</span>
+533:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">location</span>()
+534:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@location</span>
+535:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
 				<div class="aliases">
-					Also aliased as: <a href="UIComponent.html#method-i-get_location">get_location</a>
+					Also aliased as: <a href="UIComponent.html#method-i-position">position</a>
 				</div>
 				
 
@@ -790,27 +738,87 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the location of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="location--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 470</span>
-470:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">location=</span>( <span class="ruby-identifier">args</span> )
-471:                         <span class="ruby-ivar">@location</span> = <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">args</span> )
-472:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 539</span>
+539:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">location=</span>( <span class="ruby-identifier">args</span> )
+540:                         <span class="ruby-ivar">@location</span> = <span class="ruby-constant">Location</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">args</span> )
+541:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
 
 				
 				<div class="aliases">
-					Also aliased as: <a href="UIComponent.html#method-i-set_location">set_location</a>
+					Also aliased as: <a href="UIComponent.html#method-i-position%3D">position=</a>
 				</div>
 				
 
+				
+			</div>
+
+		
+			<div id="position-method" class="method-detail method-alias">
+				<a name="method-i-position"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">position</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="UIComponent.html#method-i-location">location</a>
+				</div>
+				
+			</div>
+
+		
+			<div id="position--method" class="method-detail method-alias">
+				<a name="method-i-position%3D"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">position=</span><span
+						class="method-args">( args )</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+				</div>
+
+				
+
+				
+				<div class="aliases">
+          Alias for: <a href="UIComponent.html#method-i-location%3D">location=</a>
+				</div>
 				
 			</div>
 
@@ -839,64 +847,6 @@ Anchor constants
 				
 				<div class="aliases">
           Alias for: <a href="UIComponent.html#method-i-anchor%3D">anchor=</a>
-				</div>
-				
-			</div>
-
-		
-			<div id="set-enabled-method" class="method-detail method-alias">
-				<a name="method-i-set_enabled"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">set_enabled</span><span
-						class="method-args">( flag )</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-				</div>
-
-				
-
-				
-				<div class="aliases">
-          Alias for: <a href="UIComponent.html#method-i-enabled%3D">enabled=</a>
-				</div>
-				
-			</div>
-
-		
-			<div id="set-location-method" class="method-detail method-alias">
-				<a name="method-i-set_location"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">set_location</span><span
-						class="method-args">( args )</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-				</div>
-
-				
-
-				
-				<div class="aliases">
-          Alias for: <a href="UIComponent.html#method-i-location%3D">location=</a>
 				</div>
 				
 			</div>
@@ -944,17 +894,19 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Returns the size of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="size-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 455</span>
-455:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size</span>()
-456:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@size</span>
-457:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 521</span>
+521:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size</span>()
+522:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@size</span>
+523:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -982,17 +934,19 @@ Anchor constants
 
 				<div class="method-description">
 					
-					
+					<p>
+Sets the size of this component
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="size--source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 460</span>
-460:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size=</span>( <span class="ruby-identifier">args</span> )
-461:                         <span class="ruby-ivar">@size</span> = <span class="ruby-constant">Size</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">args</span> )
-462:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 527</span>
+527:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size=</span>( <span class="ruby-identifier">args</span> )
+528:                         <span class="ruby-ivar">@size</span> = <span class="ruby-constant">Size</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">args</span> )
+529:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

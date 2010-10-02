@@ -322,8 +322,6 @@
 				
 					<li><a href="../Toolkit/Indexer.html">Toolkit::Indexer</a></li>
 				
-					<li><a href="../Toolkit/Packager.html">Toolkit::Packager</a></li>
-				
 					<li><a href="../Resource.html">Resource</a></li>
 				
 					<li><a href="../Resource/Constants.html">Resource::Constants</a></li>
@@ -382,12 +380,12 @@ Specifies a font which can be rendered by Cairo.
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 651</span>
-651:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">type</span> )
-652:                         <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
-653:                         <span class="ruby-ivar">@size</span> = <span class="ruby-identifier">size</span>
-654:                         <span class="ruby-identifier">load</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">source</span> )
-655:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 752</span>
+752:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">type</span> )
+753:                         <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+754:                         <span class="ruby-ivar">@size</span> = <span class="ruby-identifier">size</span>
+755:                         <span class="ruby-identifier">load</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">source</span> )
+756:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -417,17 +415,19 @@ Specifies a font which can be rendered by Cairo.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the character height
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="character-height-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 665</span>
-665:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">character_height</span>()
-666:                         <span class="ruby-comment cmt">#</span>
-667:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 769</span>
+769:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">character_height</span>()
+770:                         <span class="ruby-comment cmt">#</span>
+771:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -455,17 +455,19 @@ Specifies a font which can be rendered by Cairo.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the character width
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="character-width-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 670</span>
-670:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">character_width</span>()
-671:                         <span class="ruby-comment cmt">#</span>
-672:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 775</span>
+775:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">character_width</span>()
+776:                         <span class="ruby-comment cmt">#</span>
+777:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -522,17 +524,19 @@ Specifies a font which can be rendered by Cairo.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the name of the font
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="name-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 657</span>
-657:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">name</span>()
-658:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@name</span>
-659:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 759</span>
+759:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">name</span>()
+760:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@name</span>
+761:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -556,17 +560,19 @@ Specifies a font which can be rendered by Cairo.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return a scaled instance of the font
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="scale-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 675</span>
-675:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scale</span>( <span class="ruby-identifier">size</span> )
-676:                         <span class="ruby-comment cmt"># TODO:  Attempt to scale font to new size; return new font instance</span>
-677:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 781</span>
+781:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">scale</span>( <span class="ruby-identifier">size</span> )
+782:                         <span class="ruby-comment cmt"># TODO:  Attempt to scale font to new size; return new font instance</span>
+783:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -590,17 +596,19 @@ Specifies a font which can be rendered by Cairo.
 
 				<div class="method-description">
 					
-					
+					<p>
+Return the size of the font
+</p>
 					
 
 					
 					<div class="method-source-code"
 						id="size-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 661</span>
-661:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size</span>()
-662:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@size</span>
-663:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 764</span>
+764:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">size</span>()
+765:                         <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@size</span>
+766:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -666,10 +674,10 @@ Specifies a font which can be rendered by Cairo.
 					<div class="method-source-code"
 						id="load-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 680</span>
-680:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">source</span> )
-681:                         <span class="ruby-comment cmt"># TODO:  Load font data into vectorized array of characters for rendering</span>
-682:                 <span class="ruby-keyword kw">end</span></pre>
+     <span class="ruby-comment cmt"># File lib/virtual_ui.rb, line 786</span>
+786:                 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load</span>( <span class="ruby-identifier">type</span>, <span class="ruby-identifier">source</span> )
+787:                         <span class="ruby-comment cmt"># TODO:  Load font data into vectorized array of characters for rendering</span>
+788:                 <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
